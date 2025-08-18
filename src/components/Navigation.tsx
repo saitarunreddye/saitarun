@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Menu, X, ChevronDown } from 'lucide-react';
+import { Menu, X, ChevronDown, FileText } from 'lucide-react';
 
 interface NavigationProps {
   currentSection: string;
@@ -34,6 +34,19 @@ const Navigation: React.FC<NavigationProps> = ({ currentSection }) => {
       element.scrollIntoView({ behavior: 'smooth' });
     }
     setIsOpen(false);
+  };
+
+  const handleResumeClick = () => {
+    // Track resume download click
+    if (typeof window !== 'undefined' && window.gtag) {
+      window.gtag('event', 'resume_download', {
+        event_category: 'engagement',
+        event_label: 'navigation_resume_button'
+      });
+    }
+    
+    // Open resume in new tab (replace with your actual resume URL)
+    window.open('/resume.pdf', '_blank');
   };
 
   return (
@@ -75,6 +88,20 @@ const Navigation: React.FC<NavigationProps> = ({ currentSection }) => {
               )}
             </motion.button>
           ))}
+          
+          {/* Resume Button */}
+          <motion.button
+            className="nav-resume-btn"
+            onClick={handleResumeClick}
+            whileHover={{ y: -2, scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.3, delay: 0.7 }}
+          >
+            <FileText size={16} />
+            Resume
+          </motion.button>
         </div>
 
         {/* Mobile Menu Button */}
@@ -142,6 +169,20 @@ const Navigation: React.FC<NavigationProps> = ({ currentSection }) => {
                   )}
                 </motion.button>
               ))}
+              
+              {/* Mobile Resume Button */}
+              <motion.button
+                className="mobile-nav-resume-btn"
+                onClick={handleResumeClick}
+                initial={{ opacity: 0, x: -20 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.3, delay: navItems.length * 0.1 }}
+                whileHover={{ x: 10 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                <FileText size={16} />
+                Resume
+              </motion.button>
             </div>
           </motion.div>
         )}

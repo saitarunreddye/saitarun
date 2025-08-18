@@ -1,8 +1,12 @@
 import React, { useEffect, useRef } from 'react';
 import { motion, useScroll, useTransform, useSpring } from 'framer-motion';
-import { ArrowDown, Github, Linkedin, Twitter, Mail, Download } from 'lucide-react';
+import { ArrowDown, Github, Linkedin, Twitter, Mail, Download, Calendar } from 'lucide-react';
 
-const Hero: React.FC = () => {
+interface HeroProps {
+  onHireMeClick: () => void;
+}
+
+const Hero: React.FC<HeroProps> = ({ onHireMeClick }) => {
   const containerRef = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({
     target: containerRef,
@@ -28,6 +32,17 @@ const Hero: React.FC = () => {
     if (aboutSection) {
       aboutSection.scrollIntoView({ behavior: 'smooth' });
     }
+  };
+
+  const handleHireMeClick = () => {
+    // Track hire me click
+    if (typeof window !== 'undefined' && window.gtag) {
+      window.gtag('event', 'hire_me_click', {
+        event_category: 'engagement',
+        event_label: 'hero_hire_me_button'
+      });
+    }
+    onHireMeClick();
   };
 
   return (
@@ -118,12 +133,14 @@ const Hero: React.FC = () => {
               className="hero-description"
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 1 }}
+              transition={{ duration: 0.8, delay: 1.0 }}
             >
-              Crafting innovative digital experiences with cutting-edge technologies. 
-              Specializing in React, TypeScript, and modern web development.
+              I craft cutting-edge digital experiences with modern technologies. 
+              Specializing in React, TypeScript, and innovative design solutions 
+              that push the boundaries of web development.
             </motion.p>
 
+            {/* Action Buttons */}
             <motion.div
               className="hero-actions"
               initial={{ opacity: 0, y: 30 }}
@@ -131,93 +148,71 @@ const Hero: React.FC = () => {
               transition={{ duration: 0.8, delay: 1.2 }}
             >
               <motion.button
-                className="btn btn-primary"
+                className="hero-btn primary"
+                onClick={handleHireMeClick}
                 whileHover={{ scale: 1.05, y: -2 }}
                 whileTap={{ scale: 0.95 }}
-                onClick={scrollToNext}
               >
-                View My Work
-                <ArrowDown size={20} />
+                <Calendar size={20} />
+                Hire Me
               </motion.button>
-
+              
               <motion.button
-                className="btn btn-secondary"
+                className="hero-btn secondary"
+                onClick={scrollToNext}
                 whileHover={{ scale: 1.05, y: -2 }}
                 whileTap={{ scale: 0.95 }}
               >
                 <Download size={20} />
-                Download CV
+                View Work
               </motion.button>
+            </motion.div>
+
+            {/* Social Links */}
+            <motion.div
+              className="hero-social"
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 1.4 }}
+            >
+              {socialLinks.map((link, index) => (
+                <motion.a
+                  key={link.label}
+                  href={link.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="social-link"
+                  whileHover={{ scale: 1.2, y: -2 }}
+                  whileTap={{ scale: 0.9 }}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: 1.6 + index * 0.1 }}
+                >
+                  <link.icon size={20} />
+                </motion.a>
+              ))}
             </motion.div>
           </motion.div>
 
-          {/* 3D Profile Card */}
+          {/* Scroll Indicator */}
           <motion.div
-            className="hero-profile"
-            initial={{ opacity: 0, x: 50, rotateY: 15 }}
-            animate={{ opacity: 1, x: 0, rotateY: 0 }}
-            transition={{ duration: 1, delay: 0.8 }}
-            whileHover={{ rotateY: 5, scale: 1.02 }}
+            className="scroll-indicator"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 1, delay: 2 }}
           >
-            <div className="profile-card glass">
-              <div className="profile-image">
-                <div className="image-placeholder">
-                  <span>👨‍💻</span>
-                </div>
-              </div>
-              <div className="profile-info">
-                <h3>Available for hire</h3>
-                <p>Open to new opportunities</p>
-              </div>
-            </div>
+            <motion.button
+              onClick={scrollToNext}
+              className="scroll-btn"
+              whileHover={{ y: 5 }}
+              animate={{ y: [0, 10, 0] }}
+              transition={{ duration: 2, repeat: Infinity }}
+            >
+              <ArrowDown size={24} />
+            </motion.button>
           </motion.div>
         </div>
-
-        {/* Social Links */}
-        <motion.div
-          className="hero-social"
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 1.4 }}
-        >
-          {socialLinks.map((link, index) => (
-            <motion.a
-              key={link.label}
-              href={link.href}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="social-link"
-              whileHover={{ scale: 1.2, y: -5 }}
-              whileTap={{ scale: 0.9 }}
-              initial={{ opacity: 0, scale: 0 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.3, delay: 1.6 + index * 0.1 }}
-            >
-              <link.icon size={24} />
-              <span className="social-tooltip">{link.label}</span>
-            </motion.a>
-          ))}
-        </motion.div>
-
-        {/* Scroll Indicator */}
-        <motion.div
-          className="scroll-indicator"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.8, delay: 2 }}
-        >
-          <motion.div
-            className="scroll-arrow"
-            animate={{ y: [0, 10, 0] }}
-            transition={{ duration: 2, repeat: Infinity }}
-          >
-            <ArrowDown size={24} />
-          </motion.div>
-          <p>Scroll to explore</p>
-        </motion.div>
       </div>
-
-
     </motion.div>
   );
 };
