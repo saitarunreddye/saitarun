@@ -300,11 +300,20 @@ section {
 @media (max-width: 768px) {
   section {
     padding: var(--space-2xl) 0;
-    min-height: 100vh;
-    display: flex;
-    align-items: flex-start;
-    justify-content: flex-start;
-    overflow: visible;
+    min-height: auto !important;
+    display: block !important;
+    align-items: stretch !important;
+    justify-content: flex-start !important;
+    overflow: visible !important;
+    position: relative !important;
+    z-index: 1 !important;
+  }
+  
+  /* Force all section content to be visible */
+  section > * {
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: none !important;
   }
 }
 
@@ -3885,32 +3894,48 @@ section {
   .projects-section,
   .experience-section,
   .contact-section,
-  .education-section {
+  .education-section,
+  .about-section {
     min-height: auto !important;
     padding: var(--space-2xl) 0 !important;
     display: block !important;
     overflow: visible !important;
+    position: relative !important;
+    z-index: 1 !important;
   }
   
   .skills-section .container,
   .projects-section .container,
   .experience-section .container,
   .contact-section .container,
-  .education-section .container {
+  .education-section .container,
+  .about-section .container {
     min-height: auto !important;
     padding: var(--space-lg) var(--space-sm) !important;
     width: 100% !important;
     max-width: 100% !important;
+    display: block !important;
   }
   
-  /* Ensure content is visible */
+  /* Force all content to be visible */
   .skills-tabs,
   .projects-grid,
   .experience-timeline,
   .contact-content,
-  .education-timeline {
+  .education-timeline,
+  .about-content,
+  .section-header,
+  .skills-summary,
+  .certifications-section {
     opacity: 1 !important;
     visibility: visible !important;
+    transform: none !important;
+    display: block !important;
+  }
+  
+  /* Fix motion animations on mobile */
+  [data-framer-motion] {
+    opacity: 1 !important;
     transform: none !important;
   }
 }

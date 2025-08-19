@@ -14,14 +14,14 @@ const Experience = React.lazy(() => import('./components/Experience'));
 const Education = React.lazy(() => import('./components/Education'));
 const Contact = React.lazy(() => import('./components/Contact'));
 const Footer = React.lazy(() => import('./components/Footer'));
-const LoadingScreen = React.lazy(() => import('./components/LoadingScreen'));
+
 const CalendlyModal = React.lazy(() => import('./components/CalendlyModal'));
 
 // Types
 interface AppProps {}
 
 const App: React.FC<AppProps> = () => {
-  const [isLoading, setIsLoading] = useState(true);
+
   const [currentSection, setCurrentSection] = useState('home');
   const [isCalendlyOpen, setIsCalendlyOpen] = useState(false);
 
@@ -54,22 +54,7 @@ const App: React.FC<AppProps> = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // Simulate loading
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setIsLoading(false);
-    }, 2000);
 
-    return () => clearTimeout(timer);
-  }, []);
-
-  if (isLoading) {
-    return (
-      <Suspense fallback={<div>Loading...</div>}>
-        <LoadingScreen />
-      </Suspense>
-    );
-  }
 
   return (
     <>
