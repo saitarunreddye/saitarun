@@ -152,9 +152,12 @@ const Hero: React.FC<HeroProps> = ({ onHireMeClick }) => {
           >
             <div className="profile-image-container">
               <img 
-                src="profile.jpg" 
+                src="https://via.placeholder.com/300x400/6366f1/ffffff?text=Sai+Tarun" 
                 alt="Professional headshot" 
                 className="profile-image"
+                onError={(e) => {
+                  e.currentTarget.src = "https://via.placeholder.com/300x400/6366f1/ffffff?text=Sai+Tarun";
+                }}
               />
               <div className="profile-glow"></div>
             </div>

@@ -92,9 +92,12 @@ const About: React.FC = () => {
           >
             <div className="about-image-container">
                             <img 
-                src="profile.jpg" 
+                src="https://via.placeholder.com/300x400/6366f1/ffffff?text=Sai+Tarun" 
                 alt="Professional headshot" 
                 className="about-image"
+                onError={(e) => {
+                  e.currentTarget.src = "https://via.placeholder.com/300x400/6366f1/ffffff?text=Sai+Tarun";
+                }}
               />
               <div className="about-image-glow"></div>
             </div>

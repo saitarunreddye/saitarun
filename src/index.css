@@ -883,6 +883,18 @@ section {
 
 /* Responsive adjustments */
 @media (max-width: 768px) {
+  .about-content {
+    grid-template-columns: 1fr;
+    gap: var(--space-2xl);
+    text-align: center;
+  }
+
+  .about-image-container {
+    width: 200px;
+    height: 200px;
+    margin: 0 auto;
+  }
+
   .expertise-item {
     padding: var(--space-sm);
   }
@@ -904,6 +916,28 @@ section {
 
   .expertise-subtitle {
     font-size: 0.85rem;
+  }
+
+  .timeline {
+    max-width: 100%;
+  }
+
+  .timeline::before {
+    left: 20px;
+  }
+
+  .timeline-item {
+    width: 100%;
+    left: 0 !important;
+    padding-left: 50px;
+  }
+
+  .timeline-item.left .timeline-content::after,
+  .timeline-item.right .timeline-content::after {
+    left: -10px;
+    right: auto;
+    border-left: none;
+    border-right: 10px solid var(--white);
   }
 }
 
