@@ -5,14 +5,14 @@
 To add your professional headshot to the portfolio website, follow these steps:
 
 ### 1. Save Your Image
-- Save your profile image as `profile.jpg`
+- Save your profile image as `profile_pic.jpg`
 - Place it in the `public/images/` folder
 - Recommended size: 600x600 pixels or larger (square aspect ratio)
 - Format: JPG or PNG
 
 ### 2. Image Requirements
-- **File name**: `profile.jpg`
-- **Location**: `public/images/profile.jpg`
+- **File name**: `profile_pic.jpg`
+- **Location**: `public/images/profile_pic.jpg`
 - **Format**: JPG or PNG
 - **Size**: Minimum 300x300 pixels, recommended 600x600 pixels
 - **Aspect ratio**: Square (1:1)
@@ -36,7 +36,7 @@ The profile images include:
 ```
 public/
 └── images/
-    └── profile.jpg  ← Your image goes here
+    └── profile_pic.jpg  ← Your image goes here
 ```
 
 ### 6. Alternative Names
@@ -48,6 +48,8 @@ If you prefer a different filename, you can use:
 Just update the `src` attribute in these files:
 - `src/components/Hero.tsx` (line with profile image)
 - `src/components/About.tsx` (line with profile image)
+
+**Note**: The current setup uses `profile_pic.jpg` as the filename.
 
 ## 🎯 Next Steps
 Once you've added your profile image:

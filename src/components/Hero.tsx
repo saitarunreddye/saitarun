@@ -152,11 +152,18 @@ const Hero: React.FC<HeroProps> = ({ onHireMeClick }) => {
           >
             <div className="profile-image-container">
               <img 
-                src="https://via.placeholder.com/300x400/6366f1/ffffff?text=Sai+Tarun" 
+                src={process.env.PUBLIC_URL + "/images/profile_pic.jpg"} 
                 alt="Professional headshot" 
                 className="profile-image"
                 onError={(e) => {
-                  e.currentTarget.src = "https://via.placeholder.com/300x400/6366f1/ffffff?text=Sai+Tarun";
+                  // Try alternative paths if the first one fails
+                  if (e.currentTarget.src.includes('/images/profile_pic.jpg')) {
+                    e.currentTarget.src = "/images/profile_pic.jpg";
+                  } else if (e.currentTarget.src.includes('profile_pic.jpg')) {
+                    e.currentTarget.src = "images/profile_pic.jpg";
+                  } else {
+                    e.currentTarget.src = "https://via.placeholder.com/300x400/6366f1/ffffff?text=Sai+Tarun";
+                  }
                 }}
               />
               <div className="profile-glow"></div>
