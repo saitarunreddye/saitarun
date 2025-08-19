@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
-import { ExternalLink, Github, Eye, Code, Palette, Smartphone } from 'lucide-react';
+import { ExternalLink, Github, Code, Palette, Smartphone } from 'lucide-react';
 
 const Projects: React.FC = () => {
   const [ref, inView] = useInView({
@@ -22,75 +22,63 @@ const Projects: React.FC = () => {
   const projects = [
     {
       id: 1,
-      title: "E-Commerce Platform",
-      description: "A full-stack e-commerce platform with React, Node.js, and Stripe integration. Features include user authentication, product management, shopping cart, and payment processing.",
-      image: "🛒",
+      title: "CloudOps Monitor – Real-Time Cloud Infrastructure Dashboard",
+      description: "Unified dashboard for monitoring AWS resources with real‑time metrics and alerts; reduced cloud costs by ~20% via optimization insights. Built microservices to pull AWS usage data and stream updates in real time with Slack/Email alerts when thresholds exceeded.",
+      image: "☁️",
       category: "web",
-      technologies: ["React", "Node.js", "MongoDB", "Stripe", "Redux"],
-      liveUrl: "https://ecommerce-demo.com",
-      githubUrl: "https://github.com/username/ecommerce",
-      features: ["User Authentication", "Product Management", "Shopping Cart", "Payment Processing", "Admin Dashboard"],
-      year: "2023"
+      technologies: ["React", "Flask/FastAPI", "AWS CloudWatch", "Docker", "Prometheus", "Grafana"],
+      liveUrl: "https://example.com/cloudops-monitor",
+      githubUrl: "https://github.com/saitarunreddye",
+      features: ["Real-time Metrics", "Cost Insights", "Slack/Email Alerts", "Service Health"],
+      year: "2024"
     },
     {
       id: 2,
-      title: "Task Management App",
-      description: "A collaborative task management application with real-time updates, drag-and-drop functionality, and team collaboration features.",
-      image: "📋",
+      title: "Eventify – AI-Powered Event Recommendation Platform",
+      description: "Personalized event recommendation app using ML-driven profiles and collaborative filtering. User signup → recommends local events via collaborative filtering with automated ticket reminders + calendar sync with Google API.",
+      image: "🎟️",
       category: "web",
-      technologies: ["React", "TypeScript", "Socket.io", "PostgreSQL", "Express"],
-      liveUrl: "https://task-app-demo.com",
-      githubUrl: "https://github.com/username/task-app",
-      features: ["Real-time Updates", "Drag & Drop", "Team Collaboration", "File Sharing", "Progress Tracking"],
-      year: "2023"
+      technologies: ["React", "FastAPI", "PostgreSQL", "scikit-learn", "Docker", "AWS S3"],
+      liveUrl: "https://example.com/eventify",
+      githubUrl: "https://github.com/saitarunreddye",
+      features: ["Recommendations", "Reminders & Calendar Sync", "Analytics Dashboards"],
+      year: "2024"
     },
     {
       id: 3,
-      title: "Fitness Tracking Mobile App",
-      description: "A cross-platform mobile application for fitness tracking with workout plans, progress monitoring, and social features.",
-      image: "💪",
-      category: "mobile",
-      technologies: ["React Native", "Firebase", "Redux", "Expo", "Chart.js"],
-      liveUrl: "https://fitness-app-demo.com",
-      githubUrl: "https://github.com/username/fitness-app",
-      features: ["Workout Tracking", "Progress Monitoring", "Social Features", "Nutrition Tracking", "Goal Setting"],
-      year: "2022"
+      title: "DevLinker – Automated Resume → Job Matcher",
+      description: "AI tool that scrapes job boards and ranks matches with ATS-friendly suggestions. Scrapes job descriptions from Indeed/LinkedIn APIs with embedding-based matching using LLM/semantic search.",
+      image: "🤖",
+      category: "web",
+      technologies: ["Python", "FastAPI", "React", "AWS Lambda", "Pinecone"],
+      liveUrl: "https://example.com/devlinker",
+      githubUrl: "https://github.com/saitarunreddye",
+      features: ["Semantic Search", "Resume Tips", "Job Scraping"],
+      year: "2025"
     },
     {
       id: 4,
-      title: "Portfolio Website Design",
-      description: "A modern portfolio website design with glassmorphism effects, smooth animations, and responsive design principles.",
-      image: "🎨",
-      category: "design",
-      technologies: ["Figma", "Adobe XD", "HTML/CSS", "JavaScript", "GSAP"],
-      liveUrl: "https://portfolio-design-demo.com",
-      githubUrl: "https://github.com/username/portfolio-design",
-      features: ["Glassmorphism Design", "Smooth Animations", "Responsive Layout", "Interactive Elements", "Performance Optimized"],
-      year: "2022"
+      title: "DataVision – ETL + Analytics for Business Insights",
+      description: "End‑to‑end pipeline for ingesting raw data → clean → visualize with BI dashboards. Automated ingestion + transformation of multi-GB datasets with improved query performance by 60% using caching + indexing.",
+      image: "📈",
+      category: "web",
+      technologies: ["PySpark", "Airflow", "PostgreSQL", "Flask", "Plotly"],
+      liveUrl: "https://example.com/datavision",
+      githubUrl: "https://github.com/saitarunreddye",
+      features: ["Automated Ingestion", "Transformations", "KPI Dashboards"],
+      year: "2023"
     },
     {
       id: 5,
-      title: "Weather Dashboard",
-      description: "A weather dashboard application with real-time weather data, location-based forecasts, and interactive weather maps.",
-      image: "🌤️",
+      title: "SecureAuth – Passwordless Authentication with Biometrics",
+      description: "Authentication platform supporting facial recognition and OTP-based login with JWT + RBAC. Passwordless login using face + OTP fallback with JWT tokens with refresh + role-based access control.",
+      image: "🔐",
       category: "web",
-      technologies: ["React", "OpenWeather API", "Chart.js", "Leaflet", "Tailwind CSS"],
-      liveUrl: "https://weather-dashboard-demo.com",
-      githubUrl: "https://github.com/username/weather-app",
-      features: ["Real-time Weather", "Location Services", "Interactive Maps", "Weather Alerts", "Historical Data"],
-      year: "2022"
-    },
-    {
-      id: 6,
-      title: "Social Media Dashboard",
-      description: "A comprehensive social media management dashboard for scheduling posts, analyzing performance, and managing multiple accounts.",
-      image: "📊",
-      category: "web",
-      technologies: ["Vue.js", "Node.js", "MongoDB", "Social APIs", "Chart.js"],
-      liveUrl: "https://social-dashboard-demo.com",
-      githubUrl: "https://github.com/username/social-dashboard",
-      features: ["Post Scheduling", "Analytics Dashboard", "Multi-platform Support", "Content Calendar", "Performance Reports"],
-      year: "2021"
+      technologies: ["React", "FastAPI", "AWS Rekognition", "Twilio", "Docker"],
+      liveUrl: "https://example.com/secureauth",
+      githubUrl: "https://github.com/saitarunreddye",
+      features: ["Face Login", "OTP Fallback", "Role-based Access"],
+      year: "2023"
     },
   ];
 
@@ -194,30 +182,34 @@ const Projects: React.FC = () => {
                   </div>
                 </div>
 
-                <div className="project-content">
+                <div className="project-info">
                   <div className="project-header">
                     <h3 className="project-title">{project.title}</h3>
                     <span className="project-year">{project.year}</span>
                   </div>
                   <p className="project-description">{project.description}</p>
                   
-                  <div className="project-technologies">
-                    {project.technologies.slice(0, 3).map((tech, techIndex) => (
-                      <span key={techIndex} className="tech-tag">
-                        {tech}
-                      </span>
-                    ))}
-                    {project.technologies.length > 3 && (
-                      <span className="tech-tag more">+{project.technologies.length - 3}</span>
-                    )}
+                  <div className="project-features">
+                    <h4>Key Features:</h4>
+                    <ul className="features-list">
+                      {project.features.slice(0, 3).map((feature, featureIndex) => (
+                        <li key={featureIndex}>{feature}</li>
+                      ))}
+                    </ul>
                   </div>
 
-                  <div className="project-features">
-                    {project.features.slice(0, 3).map((feature, featureIndex) => (
-                      <span key={featureIndex} className="feature-tag">
-                        {feature}
-                      </span>
-                    ))}
+                  <div className="project-technologies">
+                    <h4>Technologies:</h4>
+                    <div className="tech-tags">
+                      {project.technologies.slice(0, 4).map((tech, techIndex) => (
+                        <span key={techIndex} className="tech-tag">
+                          {tech}
+                        </span>
+                      ))}
+                      {project.technologies.length > 4 && (
+                        <span className="tech-tag more">+{project.technologies.length - 4}</span>
+                      )}
+                    </div>
                   </div>
                 </div>
               </motion.div>
@@ -314,8 +306,7 @@ const Projects: React.FC = () => {
           )}
         </AnimatePresence>
       </div>
-
-</motion.div>
+    </motion.div>
   );
 };
 

@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { useForm } from 'react-hook-form';
-import { Mail, Phone, MapPin, Send, Github, Linkedin, Twitter, MessageCircle } from 'lucide-react';
+import { Mail, Phone, MapPin, Send, Github, Linkedin, MessageCircle } from 'lucide-react';
 
 interface ContactFormData {
   name: string;
@@ -47,23 +47,66 @@ const Contact: React.FC = () => {
     }
   };
 
+  const handleEmailClick = (e: React.MouseEvent) => {
+    e.preventDefault();
+    const email = "saitarunreddye@gmail.com";
+    
+    // Copy email to clipboard
+    navigator.clipboard.writeText(email).then(() => {
+      // Show a temporary notification
+      const notification = document.createElement('div');
+      notification.textContent = `Email copied: ${email}`;
+      notification.style.cssText = `
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        background: #000;
+        color: #fff;
+        padding: 12px 20px;
+        border-radius: 8px;
+        z-index: 10000;
+        font-size: 14px;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+        animation: slideIn 0.3s ease;
+      `;
+      
+      // Add animation keyframes
+      const style = document.createElement('style');
+      style.textContent = `
+        @keyframes slideIn {
+          from { transform: translateX(100%); opacity: 0; }
+          to { transform: translateX(0); opacity: 1; }
+        }
+      `;
+      document.head.appendChild(style);
+      
+      document.body.appendChild(notification);
+      
+      // Remove notification after 3 seconds
+      setTimeout(() => {
+        notification.remove();
+        style.remove();
+      }, 3000);
+    });
+  };
+
   const contactInfo = [
     {
       icon: Mail,
       title: "Email",
-      value: "hello@yourportfolio.com",
-      link: "mailto:hello@yourportfolio.com"
+      value: "saitarunreddye@gmail.com",
+      link: "mailto:saitarunreddye@gmail.com"
     },
     {
       icon: Phone,
       title: "Phone",
-      value: "+1 (555) 123-4567",
-      link: "tel:+15551234567"
+      value: "+1 (940) 285-0439",
+      link: "tel:+19402850439"
     },
     {
       icon: MapPin,
       title: "Location",
-      value: "San Francisco, CA",
+      value: "Cleveland, OH",
       link: "#"
     }
   ];
@@ -72,20 +115,14 @@ const Contact: React.FC = () => {
     {
       icon: Github,
       name: "GitHub",
-      url: "https://github.com/yourusername",
+      url: "https://github.com/saitarunreddye",
       color: "#333"
     },
     {
       icon: Linkedin,
       name: "LinkedIn",
-      url: "https://linkedin.com/in/yourusername",
+      url: "https://linkedin.com/in/esaitarun",
       color: "#0077b5"
-    },
-    {
-      icon: Twitter,
-      name: "Twitter",
-      url: "https://twitter.com/yourusername",
-      color: "#1da1f2"
     }
   ];
 
@@ -136,6 +173,7 @@ const Contact: React.FC = () => {
                   animate={inView ? { opacity: 1, y: 0 } : {}}
                   transition={{ duration: 0.5, delay: 0.6 + index * 0.1 }}
                   whileHover={{ scale: 1.05, y: -2 }}
+                  onClick={info.title === "Email" ? handleEmailClick : undefined}
                 >
                   <div className="contact-icon">
                     <info.icon size={24} />
@@ -296,8 +334,7 @@ const Contact: React.FC = () => {
           </motion.div>
         </div>
       </div>
-
-</motion.div>
+    </motion.div>
   );
 };
 

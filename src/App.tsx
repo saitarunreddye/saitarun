@@ -1,6 +1,6 @@
 import React, { useEffect, useState, Suspense } from 'react';
 import { Helmet } from 'react-helmet';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion } from 'framer-motion';
 import Particles from 'react-tsparticles';
 import { loadFull } from 'tsparticles';
 import type { Engine } from 'tsparticles-engine';
@@ -74,47 +74,53 @@ const App: React.FC<AppProps> = () => {
   return (
     <>
       <Helmet>
-        <title>Innovative Developer Portfolio | Full-Stack Web Developer</title>
-        <meta name="description" content="Cutting-edge portfolio showcasing modern web development, creative design, and technical expertise. Full-stack developer specializing in React, TypeScript, and innovative UI/UX solutions." />
+        <title>E. Sai Tarun Reddy | Full Stack Developer · Backend · Cloud</title>
+        <meta name="description" content="Full Stack Developer specializing in secure REST APIs, cloud-native systems, CI/CD automation, and data pipelines. MS in Information Systems (CSU)." />
         <meta name="keywords" content="portfolio, web developer, full-stack, React, TypeScript, UI/UX, frontend, backend, JavaScript, Node.js" />
-        <meta name="author" content="Your Name" />
+        <meta name="author" content="E. Sai Tarun Reddy" />
         
         {/* Open Graph */}
-        <meta property="og:title" content="Innovative Developer Portfolio" />
-        <meta property="og:description" content="Cutting-edge portfolio showcasing modern web development and creative design solutions." />
+        <meta property="og:title" content="E. Sai Tarun Reddy | Portfolio" />
+        <meta property="og:description" content="Full Stack Developer · Backend Engineer · Cloud Engineer" />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://yourportfolio.com" />
+        <meta property="og:url" content="https://your-website.com" />
         
         {/* Twitter */}
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Innovative Developer Portfolio" />
-        <meta name="twitter:description" content="Cutting-edge portfolio showcasing modern web development and creative design solutions." />
+        <meta name="twitter:title" content="E. Sai Tarun Reddy" />
+        <meta name="twitter:description" content="Full Stack Developer · Backend Engineer · Cloud Engineer" />
         
         {/* Additional Meta Tags */}
         <meta name="robots" content="index, follow" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link rel="canonical" href="https://yourportfolio.com" />
+        <link rel="canonical" href="https://your-website.com" />
         
         {/* Schema.org JSON-LD */}
         <script type="application/ld+json">
           {JSON.stringify({
             "@context": "https://schema.org",
             "@type": "Person",
-            "name": "Your Name",
-            "jobTitle": "Full-Stack Web Developer",
-            "description": "Cutting-edge portfolio showcasing modern web development and creative design solutions.",
-            "url": "https://yourportfolio.com",
+            "name": "E. Sai Tarun Reddy",
+            "jobTitle": "Full Stack Developer · Backend Engineer · Cloud Engineer",
+            "description": "Secure REST APIs, cloud-native architectures, CI/CD, and data pipelines at scale.",
+            "url": "https://your-website.com",
             "sameAs": [
-              "https://github.com/yourusername",
-              "https://linkedin.com/in/yourusername",
+              "https://github.com/saitarunreddye",
+              "https://linkedin.com/in/esaitarun",
               "https://twitter.com/yourusername"
             ],
             "knowsAbout": [
+              "Python",
+              "Flask",
+              "FastAPI",
+              "AWS",
+              "CI/CD",
               "React",
-              "TypeScript",
-              "Node.js",
-              "Web Development",
-              "UI/UX Design"
+              "Angular",
+              "PostgreSQL",
+              "MongoDB",
+              "PySpark",
+              "Airflow"
             ]
           })}
         </script>

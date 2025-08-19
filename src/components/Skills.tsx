@@ -2,8 +2,8 @@ import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { 
-  Code, Database, Cloud, Smartphone, Palette, 
-  Zap, Shield, Globe, Cpu, Layers 
+  Code, Database, Cloud, Palette, 
+  Zap, Shield, Globe, Cpu
 } from 'lucide-react';
 
 const Skills: React.FC = () => {
@@ -12,60 +12,57 @@ const Skills: React.FC = () => {
     triggerOnce: true,
   });
 
-  const [activeCategory, setActiveCategory] = useState('frontend');
+  const [activeCategory, setActiveCategory] = useState('backend');
 
   const categories = [
-    { id: 'frontend', label: 'Frontend', icon: Code },
     { id: 'backend', label: 'Backend', icon: Database },
-    { id: 'mobile', label: 'Mobile', icon: Smartphone },
+    { id: 'devops', label: 'Cloud/DevOps', icon: Cloud },
+    { id: 'frontend', label: 'Frontend', icon: Code },
+    { id: 'data', label: 'Data Engineering', icon: Database },
     { id: 'design', label: 'Design', icon: Palette },
-    { id: 'devops', label: 'DevOps', icon: Cloud },
   ];
 
   const skillsData = {
-    frontend: [
-      { name: 'React', level: 95, icon: '⚛️' },
-      { name: 'TypeScript', level: 90, icon: '📘' },
-      { name: 'JavaScript', level: 95, icon: '🟨' },
-      { name: 'HTML/CSS', level: 90, icon: '🎨' },
-      { name: 'Vue.js', level: 85, icon: '💚' },
-      { name: 'Next.js', level: 88, icon: '⚡' },
-    ],
     backend: [
-      { name: 'Node.js', level: 92, icon: '🟢' },
-      { name: 'Python', level: 85, icon: '🐍' },
-      { name: 'Express.js', level: 90, icon: '🚂' },
-      { name: 'PostgreSQL', level: 88, icon: '🐘' },
-      { name: 'MongoDB', level: 85, icon: '🍃' },
-      { name: 'GraphQL', level: 80, icon: '🔷' },
-    ],
-    mobile: [
-      { name: 'React Native', level: 85, icon: '📱' },
-      { name: 'Flutter', level: 80, icon: '🦋' },
-      { name: 'iOS Development', level: 75, icon: '🍎' },
-      { name: 'Android Development', level: 70, icon: '🤖' },
-    ],
-    design: [
-      { name: 'Figma', level: 90, icon: '🎨' },
-      { name: 'Adobe XD', level: 85, icon: '✨' },
-      { name: 'Sketch', level: 80, icon: '📐' },
-      { name: 'Photoshop', level: 75, icon: '🖼️' },
+      { name: 'Python', level: 90, icon: '🐍' },
+      { name: 'Flask', level: 85, icon: '🧪' },
+      { name: 'FastAPI', level: 85, icon: '🚀' },
+      { name: 'REST APIs', level: 90, icon: '🧩' },
+      { name: 'JWT & RBAC', level: 85, icon: '🔐' },
+      { name: 'Node.js', level: 75, icon: '🟢' },
     ],
     devops: [
+      { name: 'AWS (EC2, S3, Lambda)', level: 80, icon: '☁️' },
       { name: 'Docker', level: 85, icon: '🐳' },
-      { name: 'AWS', level: 80, icon: '☁️' },
-      { name: 'CI/CD', level: 85, icon: '🔄' },
-      { name: 'Kubernetes', level: 70, icon: '⚓' },
+      { name: 'GitHub Actions (CI/CD)', level: 85, icon: '🔄' },
+      { name: 'Prometheus & Grafana', level: 75, icon: '📊' },
     ],
-  };
+    frontend: [
+      { name: 'Angular', level: 85, icon: '🅰️' },
+      { name: 'React', level: 80, icon: '⚛️' },
+      { name: 'TypeScript', level: 85, icon: '📘' },
+      { name: 'HTML/CSS', level: 90, icon: '🎨' },
+    ],
+    data: [
+      { name: 'PostgreSQL', level: 85, icon: '🐘' },
+      { name: 'MongoDB', level: 80, icon: '🍃' },
+      { name: 'PySpark', level: 80, icon: '🔥' },
+      { name: 'Airflow', level: 80, icon: '🛫' },
+      { name: 'Snowflake', level: 70, icon: '❄️' },
+    ],
+    design: [
+      { name: 'Figma', level: 80, icon: '🎨' },
+      { name: 'UX Best Practices', level: 75, icon: '🧠' },
+    ],
+  } as const;
 
   const tools = [
     { name: 'Git', icon: '📚', description: 'Version Control' },
     { name: 'VS Code', icon: '💻', description: 'Code Editor' },
     { name: 'Postman', icon: '📮', description: 'API Testing' },
     { name: 'Jira', icon: '📋', description: 'Project Management' },
-    { name: 'Figma', icon: '🎨', description: 'Design Tool' },
     { name: 'Docker', icon: '🐳', description: 'Containerization' },
+    { name: 'Grafana', icon: '📈', description: 'Monitoring' },
   ];
 
   return (

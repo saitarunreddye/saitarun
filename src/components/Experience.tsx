@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
-import { Calendar, MapPin, ExternalLink, Award, Users, Zap } from 'lucide-react';
+import { Calendar, MapPin, Award, Users, Zap } from 'lucide-react';
 
 const Experience: React.FC = () => {
   const [ref, inView] = useInView({
@@ -12,93 +12,45 @@ const Experience: React.FC = () => {
   const experiences = [
     {
       id: 1,
-      title: "Senior Full-Stack Developer",
-      company: "Tech Innovations Inc.",
-      location: "San Francisco, CA",
-      period: "2022 - Present",
-      description: "Leading development of enterprise applications and mentoring junior developers. Responsible for architecting scalable solutions and implementing best practices.",
+      title: "Software Engineer – Full Stack",
+      company: "Incentives Software Pvt Ltd",
+      location: "Hyderabad, India",
+      period: "Apr 2020 – May 2023",
+      description: "Designed and shipped Flask + Angular microservices for an incentive platform serving 20,000+ users.",
       achievements: [
-        "Led development of 3 major enterprise applications",
-        "Mentored 5 junior developers",
-        "Improved application performance by 40%",
-        "Implemented CI/CD pipelines reducing deployment time by 60%"
+        "Built secure JWT REST APIs; reduced unauthorized access by 40%",
+        "Delivered real-time dashboards with PostgreSQL + MongoDB",
+        "Re-architected ETL (PySpark + Airflow) boosting throughput 80%",
+        "Automated parsing on AWS Lambda, cutting manual ops 70%",
+        "Integrated Prometheus + Grafana monitoring, improving MTTR",
+        "Implemented CI/CD with Docker + GitHub Actions (deploy 2h → 10m)",
+        "Mentored 4 junior devs; improved team delivery velocity"
       ],
-      technologies: ["React", "Node.js", "TypeScript", "AWS", "Docker", "Kubernetes"],
-      type: "Full-time",
-      logo: "🏢"
-    },
-    {
-      id: 2,
-      title: "Full-Stack Developer",
-      company: "Digital Solutions Co.",
-      location: "New York, NY",
-      period: "2020 - 2022",
-      description: "Built scalable web applications using modern technologies. Collaborated with cross-functional teams to deliver high-quality products.",
-      achievements: [
-        "Developed 8 client-facing applications",
-        "Reduced bug reports by 50%",
-        "Optimized database queries improving load times by 35%",
-        "Implemented automated testing increasing coverage to 85%"
-      ],
-      technologies: ["React", "Node.js", "MongoDB", "Express", "Redux", "Jest"],
+      technologies: ["Angular", "Flask", "FastAPI", "Python", "PostgreSQL", "MongoDB", "AWS", "Docker", "GitHub Actions", "PySpark", "Airflow", "Prometheus", "Grafana"],
       type: "Full-time",
       logo: "💼"
     },
     {
-      id: 3,
-      title: "Frontend Developer",
-      company: "Creative Agency",
-      location: "Los Angeles, CA",
-      period: "2018 - 2020",
-      description: "Created responsive and interactive user interfaces for various clients. Focused on delivering exceptional user experiences.",
+      id: 2,
+      title: "Graduate Research Assistant",
+      company: "Cleveland State University",
+      location: "Cleveland, OH",
+      period: "Jan – May 2025",
+      description: "Developed Python dashboards and Flask microservices for student data visualization.",
       achievements: [
-        "Designed and developed 15+ client websites",
-        "Achieved 95% client satisfaction rate",
-        "Reduced page load times by 45%",
-        "Implemented accessibility features for all projects"
+        "Reduced reporting work by 60% with automated dashboards",
+        "Optimized DB queries + caching, cutting downtime 15%"
       ],
-      technologies: ["React", "Vue.js", "JavaScript", "CSS3", "HTML5", "GSAP"],
-      type: "Full-time",
-      logo: "🎨"
-    },
-    {
-      id: 4,
-      title: "Web Development Intern",
-      company: "Startup Studio",
-      location: "Austin, TX",
-      period: "2017 - 2018",
-      description: "Started my journey in web development with modern technologies. Learned best practices and industry standards.",
-      achievements: [
-        "Built 5 small-scale applications",
-        "Learned modern development workflows",
-        "Contributed to open-source projects",
-        "Gained experience with agile methodologies"
-      ],
-      technologies: ["JavaScript", "HTML", "CSS", "Git", "Bootstrap", "jQuery"],
-      type: "Internship",
-      logo: "🚀"
+      technologies: ["Python", "Flask", "PostgreSQL", "Caching"],
+      type: "Graduate Assistant",
+      logo: "🎓"
     }
   ];
 
   const certifications = [
-    {
-      name: "AWS Certified Solutions Architect",
-      issuer: "Amazon Web Services",
-      date: "2023",
-      logo: "☁️"
-    },
-    {
-      name: "React Developer Certification",
-      issuer: "Meta",
-      date: "2022",
-      logo: "⚛️"
-    },
-    {
-      name: "Google Cloud Professional Developer",
-      issuer: "Google",
-      date: "2021",
-      logo: "🌐"
-    }
+    { name: "Microsoft Certified: Azure Fundamentals", issuer: "Microsoft", date: "2023", logo: "🔷" },
+    { name: "Python Full Stack Development Certified", issuer: "", date: "2022", logo: "🐍" },
+    { name: "JavaScript Algorithms & Data Structures", issuer: "", date: "2021", logo: "🟨" }
   ];
 
   return (
@@ -263,8 +215,7 @@ const Experience: React.FC = () => {
           </div>
         </motion.div>
       </div>
-
-</motion.div>
+    </motion.div>
   );
 };
 

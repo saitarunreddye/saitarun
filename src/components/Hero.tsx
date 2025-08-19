@@ -1,6 +1,6 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useRef } from 'react';
 import { motion, useScroll, useTransform, useSpring } from 'framer-motion';
-import { ArrowDown, Github, Linkedin, Twitter, Mail, Download, Calendar } from 'lucide-react';
+import { ArrowDown, Github, Linkedin, Mail, Download, Calendar } from 'lucide-react';
 
 interface HeroProps {
   onHireMeClick: () => void;
@@ -21,10 +21,9 @@ const Hero: React.FC<HeroProps> = ({ onHireMeClick }) => {
   const springOpacity = useSpring(opacity, { stiffness: 100, damping: 30 });
 
   const socialLinks = [
-    { icon: Github, href: "https://github.com/yourusername", label: "GitHub" },
-    { icon: Linkedin, href: "https://linkedin.com/in/yourusername", label: "LinkedIn" },
-    { icon: Twitter, href: "https://twitter.com/yourusername", label: "Twitter" },
-    { icon: Mail, href: "mailto:your.email@example.com", label: "Email" },
+    { icon: Github, href: "https://github.com/saitarunreddye", label: "GitHub" },
+    { icon: Linkedin, href: "https://linkedin.com/in/esaitarun", label: "LinkedIn" },
+    { icon: Mail, href: "mailto:saitarunreddye@gmail.com", label: "Email" },
   ];
 
   const scrollToNext = () => {
@@ -43,6 +42,49 @@ const Hero: React.FC<HeroProps> = ({ onHireMeClick }) => {
       });
     }
     onHireMeClick();
+  };
+
+  const handleEmailClick = (e: React.MouseEvent) => {
+    e.preventDefault();
+    const email = "saitarunreddye@gmail.com";
+    
+    // Copy email to clipboard
+    navigator.clipboard.writeText(email).then(() => {
+      // Show a temporary notification
+      const notification = document.createElement('div');
+      notification.textContent = `Email copied: ${email}`;
+      notification.style.cssText = `
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        background: #000;
+        color: #fff;
+        padding: 12px 20px;
+        border-radius: 8px;
+        z-index: 10000;
+        font-size: 14px;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+        animation: slideIn 0.3s ease;
+      `;
+      
+      // Add animation keyframes
+      const style = document.createElement('style');
+      style.textContent = `
+        @keyframes slideIn {
+          from { transform: translateX(100%); opacity: 0; }
+          to { transform: translateX(0); opacity: 1; }
+        }
+      `;
+      document.head.appendChild(style);
+      
+      document.body.appendChild(notification);
+      
+      // Remove notification after 3 seconds
+      setTimeout(() => {
+        notification.remove();
+        style.remove();
+      }, 3000);
+    });
   };
 
   return (
@@ -96,6 +138,28 @@ const Hero: React.FC<HeroProps> = ({ onHireMeClick }) => {
 
         {/* Main Content */}
         <div className="hero-content">
+          {/* Profile Image */}
+          <motion.div
+            className="hero-profile"
+            initial={{ opacity: 0, scale: 0.8, rotateY: -15 }}
+            animate={{ opacity: 1, scale: 1, rotateY: 0 }}
+            transition={{ duration: 1, delay: 0.3 }}
+            whileHover={{ 
+              scale: 1.05, 
+              rotateY: 5,
+              transition: { duration: 0.3 }
+            }}
+          >
+            <div className="profile-image-container">
+              <img 
+                src="/images/profile.jpg" 
+                alt="Professional headshot" 
+                className="profile-image"
+              />
+              <div className="profile-glow"></div>
+            </div>
+          </motion.div>
+
           <motion.div
             className="hero-text"
             initial={{ opacity: 0, y: 50 }}
@@ -117,7 +181,7 @@ const Hero: React.FC<HeroProps> = ({ onHireMeClick }) => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.6 }}
             >
-              <span className="gradient-text">Your Name</span>
+              <span className="gradient-text">E. Sai Tarun Reddy</span>
             </motion.h1>
 
             <motion.h2
@@ -126,7 +190,7 @@ const Hero: React.FC<HeroProps> = ({ onHireMeClick }) => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.8 }}
             >
-              Full-Stack Developer & UI/UX Designer
+              Full Stack Developer · Backend Engineer · Cloud Engineer
             </motion.h2>
 
             <motion.p
@@ -135,9 +199,7 @@ const Hero: React.FC<HeroProps> = ({ onHireMeClick }) => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 1.0 }}
             >
-              I craft cutting-edge digital experiences with modern technologies. 
-              Specializing in React, TypeScript, and innovative design solutions 
-              that push the boundaries of web development.
+              I build secure REST APIs, automate CI/CD, and design cloud-native systems. Recently completed my MS in Information Systems at Cleveland State University, focusing on analytics and cloud architectures.
             </motion.p>
 
             {/* Action Buttons */}
@@ -187,6 +249,7 @@ const Hero: React.FC<HeroProps> = ({ onHireMeClick }) => {
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5, delay: 1.6 + index * 0.1 }}
+                  onClick={link.label === "Email" ? handleEmailClick : undefined}
                 >
                   <link.icon size={20} />
                 </motion.a>

@@ -124,8 +124,7 @@ const LoadingScreen: React.FC = () => {
           ))}
         </motion.div>
       </div>
-
-</motion.div>
+    </motion.div>
   );
 };
 

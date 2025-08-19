@@ -10,45 +10,53 @@ const About: React.FC = () => {
   });
 
   const stats = [
-    { icon: Code, value: "5+", label: "Years Experience" },
-    { icon: Palette, value: "50+", label: "Projects Completed" },
-    { icon: Users, value: "30+", label: "Happy Clients" },
-    { icon: Award, value: "15+", label: "Awards Won" },
+    { icon: Code, value: "3+", label: "Years Experience" },
+    { icon: Palette, value: "20+", label: "Projects Built" },
+    { icon: Users, value: "4", label: "Teammates Mentored" },
+    { icon: Award, value: "5+", label: "Certifications" },
   ];
 
   const skills = [
-    { name: "Frontend Development", percentage: 95 },
-    { name: "Backend Development", percentage: 90 },
-    { name: "UI/UX Design", percentage: 85 },
-    { name: "Mobile Development", percentage: 80 },
-    { name: "DevOps & Cloud", percentage: 75 },
+    {
+      name: "Frontend Development",
+      subtitle: "Angular/React",
+      percentage: 85
+    },
+    {
+      name: "Backend Development",
+      subtitle: "Flask/FastAPI",
+      percentage: 90
+    },
+    {
+      name: "Cloud & DevOps",
+      subtitle: "AWS, CI/CD",
+      percentage: 85
+    },
+    {
+      name: "Data Engineering",
+      subtitle: "PySpark/Airflow",
+      percentage: 80
+    },
+    {
+      name: "Security & Monitoring",
+      subtitle: "Security Best Practices",
+      percentage: 80
+    }
   ];
 
   const timeline = [
     {
-      year: "2023",
-      title: "Senior Full-Stack Developer",
-      company: "Tech Innovations Inc.",
-      description: "Leading development of enterprise applications and mentoring junior developers."
+      year: "Apr 2020 – May 2023",
+      title: "Software Engineer – Full Stack",
+      company: "Incentives Software Pvt Ltd",
+      description: "Designed and shipped Flask + Angular microservices for an incentive platform serving 20,000+ users. Built secure JWT REST APIs, real-time dashboards, and automated CI/CD with Docker + GitHub Actions."
     },
     {
-      year: "2021",
-      title: "Full-Stack Developer",
-      company: "Digital Solutions Co.",
-      description: "Built scalable web applications using React, Node.js, and cloud technologies."
-    },
-    {
-      year: "2019",
-      title: "Frontend Developer",
-      company: "Creative Agency",
-      description: "Created responsive and interactive user interfaces for various clients."
-    },
-    {
-      year: "2018",
-      title: "Web Development Intern",
-      company: "Startup Studio",
-      description: "Started my journey in web development with modern technologies."
-    },
+      year: "Jan – May 2025",
+      title: "Graduate Research Assistant",
+      company: "Cleveland State University",
+      description: "Developed Python dashboards and Flask microservices for student data visualization; optimized DB queries + caching to reduce downtime by 15%."
+    }
   ];
 
   return (
@@ -75,6 +83,23 @@ const About: React.FC = () => {
         </motion.div>
 
         <div className="about-content">
+          {/* Profile Image */}
+          <motion.div
+            className="about-profile"
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={inView ? { opacity: 1, scale: 1 } : {}}
+            transition={{ duration: 0.8, delay: 0.3 }}
+          >
+            <div className="about-image-container">
+              <img
+                src="/images/profile.jpg"
+                alt="Professional headshot"
+                className="about-image"
+              />
+              <div className="about-image-glow"></div>
+            </div>
+          </motion.div>
+
           {/* Main About Content */}
           <motion.div
             className="about-main"
@@ -85,21 +110,10 @@ const About: React.FC = () => {
             <div className="about-text">
               <h3>Who I Am</h3>
               <p>
-                I'm a passionate full-stack developer with over 5 years of experience 
-                creating innovative digital solutions. My journey in technology began 
-                with a curiosity about how things work on the web, and it has evolved 
-                into a deep passion for building applications that solve real-world problems.
+                I’m a detail-oriented Full Stack Developer with 3+ years building cloud‑native, microservices‑driven products. My strength lies in developing secure REST APIs, automating CI/CD pipelines, and building data pipelines at scale.
               </p>
               <p>
-                I specialize in modern web technologies including React, TypeScript, 
-                Node.js, and cloud platforms. My approach combines technical expertise 
-                with creative problem-solving, ensuring that every project I work on 
-                not only functions flawlessly but also delivers an exceptional user experience.
-              </p>
-              <p>
-                When I'm not coding, you'll find me exploring new technologies, 
-                contributing to open-source projects, or sharing knowledge with 
-                the developer community.
+                I deliver measurable impact in performance, reliability, and security using Python, Angular/React, and AWS. I recently completed my MS in Information Systems at Cleveland State University, focusing on advanced analytics and cloud architectures.
               </p>
             </div>
 
@@ -126,32 +140,37 @@ const About: React.FC = () => {
 
           {/* Skills Section */}
           <motion.div
-            className="skills-section"
+            className="about-skills-section"
             initial={{ opacity: 0, x: 50 }}
             animate={inView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.8, delay: 0.6 }}
           >
             <h3>My Expertise</h3>
-            <div className="skills-list">
+            <div className="expertise-simple">
               {skills.map((skill, index) => (
                 <motion.div
                   key={skill.name}
-                  className="skill-item"
-                  initial={{ opacity: 0, x: 30 }}
+                  className="expertise-item"
+                  initial={{ opacity: 0, x: -20 }}
                   animate={inView ? { opacity: 1, x: 0 } : {}}
                   transition={{ duration: 0.5, delay: 0.8 + index * 0.1 }}
                 >
-                  <div className="skill-header">
-                    <span className="skill-name">{skill.name}</span>
-                    <span className="skill-percentage">{skill.percentage}%</span>
+                  <div className="expertise-header">
+                    <div className="expertise-info">
+                      <h4 className="expertise-title">{skill.name}</h4>
+                      <p className="expertise-subtitle">{skill.subtitle}</p>
+                    </div>
+                    <span className="expertise-percentage">{skill.percentage}%</span>
                   </div>
-                  <div className="skill-bar">
-                    <motion.div
-                      className="skill-progress"
-                      initial={{ width: 0 }}
-                      animate={inView ? { width: `${skill.percentage}%` } : {}}
-                      transition={{ duration: 1, delay: 1 + index * 0.1 }}
-                    />
+                  <div className="expertise-progress">
+                    <div className="progress-bar">
+                      <motion.div
+                        className="progress-fill"
+                        initial={{ width: 0 }}
+                        animate={inView ? { width: `${skill.percentage}%` } : {}}
+                        transition={{ duration: 1, delay: 1 + index * 0.1 }}
+                      />
+                    </div>
                   </div>
                 </motion.div>
               ))}

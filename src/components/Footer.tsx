@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Heart, ArrowUp, Github, Linkedin, Twitter, Mail } from 'lucide-react';
+import { Heart, ArrowUp, Github, Linkedin, Mail } from 'lucide-react';
 
 const Footer: React.FC = () => {
   const scrollToTop = () => {
@@ -9,29 +9,66 @@ const Footer: React.FC = () => {
 
   const currentYear = new Date().getFullYear();
 
+  const handleEmailClick = (e: React.MouseEvent) => {
+    e.preventDefault();
+    const email = "saitarunreddye@gmail.com";
+    
+    // Copy email to clipboard
+    navigator.clipboard.writeText(email).then(() => {
+      // Show a temporary notification
+      const notification = document.createElement('div');
+      notification.textContent = `Email copied: ${email}`;
+      notification.style.cssText = `
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        background: #000;
+        color: #fff;
+        padding: 12px 20px;
+        border-radius: 8px;
+        z-index: 10000;
+        font-size: 14px;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+        animation: slideIn 0.3s ease;
+      `;
+      
+      // Add animation keyframes
+      const style = document.createElement('style');
+      style.textContent = `
+        @keyframes slideIn {
+          from { transform: translateX(100%); opacity: 0; }
+          to { transform: translateX(0); opacity: 1; }
+        }
+      `;
+      document.head.appendChild(style);
+      
+      document.body.appendChild(notification);
+      
+      // Remove notification after 3 seconds
+      setTimeout(() => {
+        notification.remove();
+        style.remove();
+      }, 3000);
+    });
+  };
+
   const socialLinks = [
     {
       icon: Github,
       name: "GitHub",
-      url: "https://github.com/yourusername",
+      url: "https://github.com/saitarunreddye",
       color: "#333"
     },
     {
       icon: Linkedin,
       name: "LinkedIn",
-      url: "https://linkedin.com/in/yourusername",
+      url: "https://linkedin.com/in/esaitarun",
       color: "#0077b5"
-    },
-    {
-      icon: Twitter,
-      name: "Twitter",
-      url: "https://twitter.com/yourusername",
-      color: "#1da1f2"
     },
     {
       icon: Mail,
       name: "Email",
-      url: "mailto:hello@yourportfolio.com",
+      url: "mailto:saitarunreddye@gmail.com",
       color: "#ea4335"
     }
   ];
@@ -62,8 +99,7 @@ const Footer: React.FC = () => {
                 <span className="gradient-text">Portfolio</span>
               </h3>
               <p className="brand-description">
-                Crafting innovative digital experiences with passion and creativity. 
-                Let's build something amazing together.
+                Full Stack Developer crafting reliable, secure, and scalable systems. Based in Cleveland, OH.
               </p>
             </motion.div>
 
@@ -111,8 +147,8 @@ const Footer: React.FC = () => {
               <h4>Get In Touch</h4>
               <div className="contact-info">
                 <p>Ready to start your next project?</p>
-                <a href="mailto:hello@yourportfolio.com" className="contact-email">
-                  hello@yourportfolio.com
+                <a href="mailto:saitarunreddye@gmail.com" className="contact-email">
+                  saitarunreddye@gmail.com
                 </a>
               </div>
             </motion.div>
@@ -141,6 +177,7 @@ const Footer: React.FC = () => {
                   viewport={{ once: true }}
                   whileHover={{ scale: 1.2, y: -3 }}
                   whileTap={{ scale: 0.9 }}
+                  onClick={social.name === "Email" ? handleEmailClick : undefined}
                 >
                   <social.icon size={20} />
                   <span className="social-tooltip">{social.name}</span>
@@ -160,7 +197,7 @@ const Footer: React.FC = () => {
         >
           <div className="footer-bottom-content">
             <p className="copyright">
-              © {currentYear} Your Name. Made with{' '}
+              © {currentYear} E. Sai Tarun Reddy. Made with{' '}
               <Heart size={16} className="heart-icon" />{' '}
               and lots of coffee.
             </p>
@@ -180,8 +217,7 @@ const Footer: React.FC = () => {
           </div>
         </motion.div>
       </div>
-
-</footer>
+    </footer>
   );
 };
 

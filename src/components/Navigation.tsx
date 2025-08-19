@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Menu, X, ChevronDown, FileText } from 'lucide-react';
+import { Menu, X, FileText } from 'lucide-react';
 
 interface NavigationProps {
   currentSection: string;
@@ -62,7 +62,7 @@ const Navigation: React.FC<NavigationProps> = ({ currentSection }) => {
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
         >
-          <span className="gradient-text">Portfolio</span>
+          <span className="gradient-text">E. Sai Tarun Reddy</span>
         </motion.div>
 
         {/* Desktop Navigation */}
@@ -187,8 +187,7 @@ const Navigation: React.FC<NavigationProps> = ({ currentSection }) => {
           </motion.div>
         )}
       </AnimatePresence>
-
-</motion.nav>
+    </motion.nav>
   );
 };
 
