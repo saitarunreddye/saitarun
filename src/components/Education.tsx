@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
-import { GraduationCap, Calendar, MapPin, Award, BookOpen, Users, Code } from 'lucide-react';
+import { GraduationCap, Calendar, MapPin, Award, BookOpen, Code } from 'lucide-react';
 
 const Education: React.FC = () => {
   const [ref, inView] = useInView({
@@ -83,12 +83,6 @@ const Education: React.FC = () => {
       issuer: "Professional Certification",
       year: "2023",
       icon: Code
-    },
-    {
-      name: "Certified Scrum Master (CSM)",
-      issuer: "Scrum Alliance",
-      year: "2023",
-      icon: Users
     }
   ];
 
