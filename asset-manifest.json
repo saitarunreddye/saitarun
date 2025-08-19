@@ -1,37 +1,13 @@
 {
   "files": {
     "main.css": "/saitarun/static/css/main.70cc22e7.css",
-    "main.js": "/saitarun/static/js/main.8d98a388.js",
-    "static/js/325.69524cfb.chunk.js": "/saitarun/static/js/325.69524cfb.chunk.js",
-    "static/js/311.74a50d6f.chunk.js": "/saitarun/static/js/311.74a50d6f.chunk.js",
-    "static/js/518.77864d13.chunk.js": "/saitarun/static/js/518.77864d13.chunk.js",
-    "static/js/152.a6b20c6f.chunk.js": "/saitarun/static/js/152.a6b20c6f.chunk.js",
-    "static/js/81.e99a9788.chunk.js": "/saitarun/static/js/81.e99a9788.chunk.js",
-    "static/js/881.c86f6764.chunk.js": "/saitarun/static/js/881.c86f6764.chunk.js",
-    "static/js/370.d37ef7d8.chunk.js": "/saitarun/static/js/370.d37ef7d8.chunk.js",
-    "static/js/825.04f91e1d.chunk.js": "/saitarun/static/js/825.04f91e1d.chunk.js",
-    "static/js/293.3070103e.chunk.js": "/saitarun/static/js/293.3070103e.chunk.js",
-    "static/js/452.b3f01b98.chunk.js": "/saitarun/static/js/452.b3f01b98.chunk.js",
-    "static/js/760.033b0ae0.chunk.js": "/saitarun/static/js/760.033b0ae0.chunk.js",
-    "static/js/779.271e3762.chunk.js": "/saitarun/static/js/779.271e3762.chunk.js",
+    "main.js": "/saitarun/static/js/main.b15c8d33.js",
     "index.html": "/saitarun/index.html",
     "main.70cc22e7.css.map": "/saitarun/static/css/main.70cc22e7.css.map",
-    "main.8d98a388.js.map": "/saitarun/static/js/main.8d98a388.js.map",
-    "325.69524cfb.chunk.js.map": "/saitarun/static/js/325.69524cfb.chunk.js.map",
-    "311.74a50d6f.chunk.js.map": "/saitarun/static/js/311.74a50d6f.chunk.js.map",
-    "518.77864d13.chunk.js.map": "/saitarun/static/js/518.77864d13.chunk.js.map",
-    "152.a6b20c6f.chunk.js.map": "/saitarun/static/js/152.a6b20c6f.chunk.js.map",
-    "81.e99a9788.chunk.js.map": "/saitarun/static/js/81.e99a9788.chunk.js.map",
-    "881.c86f6764.chunk.js.map": "/saitarun/static/js/881.c86f6764.chunk.js.map",
-    "370.d37ef7d8.chunk.js.map": "/saitarun/static/js/370.d37ef7d8.chunk.js.map",
-    "825.04f91e1d.chunk.js.map": "/saitarun/static/js/825.04f91e1d.chunk.js.map",
-    "293.3070103e.chunk.js.map": "/saitarun/static/js/293.3070103e.chunk.js.map",
-    "452.b3f01b98.chunk.js.map": "/saitarun/static/js/452.b3f01b98.chunk.js.map",
-    "760.033b0ae0.chunk.js.map": "/saitarun/static/js/760.033b0ae0.chunk.js.map",
-    "779.271e3762.chunk.js.map": "/saitarun/static/js/779.271e3762.chunk.js.map"
+    "main.b15c8d33.js.map": "/saitarun/static/js/main.b15c8d33.js.map"
   },
   "entrypoints": [
     "static/css/main.70cc22e7.css",
-    "static/js/main.8d98a388.js"
+    "static/js/main.b15c8d33.js"
   ]
 }
