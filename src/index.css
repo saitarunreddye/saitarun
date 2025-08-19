@@ -248,11 +248,20 @@ button {
 @media (max-width: 768px) {
   .container {
     padding: 0 var(--space-sm);
+    width: 100%;
+    max-width: 100%;
+    overflow: visible;
   }
   
   h1 { font-size: clamp(2rem, 8vw, 3rem); }
   h2 { font-size: clamp(1.5rem, 6vw, 2.5rem); }
   h3 { font-size: clamp(1.25rem, 5vw, 1.75rem); }
+  
+  /* Ensure sections are visible on mobile */
+  section > .container {
+    min-height: auto;
+    padding: var(--space-lg) var(--space-sm);
+  }
 }
 
 /* Print Styles */
@@ -291,7 +300,11 @@ section {
 @media (max-width: 768px) {
   section {
     padding: var(--space-2xl) 0;
-    min-height: auto;
+    min-height: 100vh;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    overflow: visible;
   }
 }
 
@@ -3865,5 +3878,39 @@ section {
   .scroll-to-top {
     bottom: var(--space-md);
     right: var(--space-md);
+  }
+  
+  /* Mobile fixes for section visibility */
+  .skills-section,
+  .projects-section,
+  .experience-section,
+  .contact-section,
+  .education-section {
+    min-height: auto !important;
+    padding: var(--space-2xl) 0 !important;
+    display: block !important;
+    overflow: visible !important;
+  }
+  
+  .skills-section .container,
+  .projects-section .container,
+  .experience-section .container,
+  .contact-section .container,
+  .education-section .container {
+    min-height: auto !important;
+    padding: var(--space-lg) var(--space-sm) !important;
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+  
+  /* Ensure content is visible */
+  .skills-tabs,
+  .projects-grid,
+  .experience-timeline,
+  .contact-content,
+  .education-timeline {
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: none !important;
   }
 }
