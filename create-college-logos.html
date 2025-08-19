@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>College Logo Generator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            background: #f0f0f0;
+        }
+        .logo-container {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        .logo {
+            width: 200px;
+            height: 200px;
+            background: white;
+            border-radius: 15px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            text-align: center;
+            padding: 20px;
+        }
+        .logo h2 {
+            margin: 0 0 10px 0;
+            font-size: 18px;
+            color: #333;
+        }
+        .logo p {
+            margin: 0;
+            font-size: 14px;
+            color: #666;
+        }
+        .csu {
+            background: linear-gradient(135deg, #1e3a8a, #3b82f6);
+            color: white;
+        }
+        .jntu {
+            background: linear-gradient(135deg, #dc2626, #ef4444);
+            color: white;
+        }
+        .download-btn {
+            margin-top: 10px;
+            padding: 8px 16px;
+            background: #333;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .download-btn:hover {
+            background: #555;
+        }
+    </style>
+</head>
+<body>
+    <div class="logo-container">
+        <div class="logo csu">
+            <h2>Cleveland State University</h2>
+            <p>MS Information Systems</p>
+            <button class="download-btn" onclick="downloadLogo('csu')">Download CSU Logo</button>
+        </div>
+        <div class="logo jntu">
+            <h2>JNTU Hyderabad</h2>
+            <p>BTech Computer Science</p>
+            <button class="download-btn" onclick="downloadLogo('jntu')">Download JNTU Logo</button>
+        </div>
+    </div>
+
+    <script>
+        function downloadLogo(type) {
+            const canvas = document.createElement('canvas');
+            const ctx = canvas.getContext('2d');
+            canvas.width = 200;
+            canvas.height = 200;
+            
+            if (type === 'csu') {
+                // CSU gradient
+                const gradient = ctx.createLinearGradient(0, 0, 200, 200);
+                gradient.addColorStop(0, '#1e3a8a');
+                gradient.addColorStop(1, '#3b82f6');
+                ctx.fillStyle = gradient;
+                ctx.fillRect(0, 0, 200, 200);
+                
+                // Text
+                ctx.fillStyle = 'white';
+                ctx.font = 'bold 16px Arial';
+                ctx.textAlign = 'center';
+                ctx.fillText('Cleveland State', 100, 80);
+                ctx.fillText('University', 100, 100);
+                ctx.font = '12px Arial';
+                ctx.fillText('MS Information Systems', 100, 130);
+            } else {
+                // JNTU gradient
+                const gradient = ctx.createLinearGradient(0, 0, 200, 200);
+                gradient.addColorStop(0, '#dc2626');
+                gradient.addColorStop(1, '#ef4444');
+                ctx.fillStyle = gradient;
+                ctx.fillRect(0, 0, 200, 200);
+                
+                // Text
+                ctx.fillStyle = 'white';
+                ctx.font = 'bold 16px Arial';
+                ctx.textAlign = 'center';
+                ctx.fillText('JNTU Hyderabad', 100, 80);
+                ctx.font = '12px Arial';
+                ctx.fillText('BTech Computer Science', 100, 130);
+            }
+            
+            // Download
+            const link = document.createElement('a');
+            link.download = `${type}-logo.png`;
+            link.href = canvas.toDataURL();
+            link.click();
+        }
+    </script>
+</body>
+</html>

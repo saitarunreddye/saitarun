@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
-import { GraduationCap, Calendar, MapPin, Award, BookOpen, Users } from 'lucide-react';
+import { GraduationCap, Calendar, MapPin, Award, BookOpen, Users, Code } from 'lucide-react';
 
 const Education: React.FC = () => {
   const [ref, inView] = useInView({
@@ -17,6 +17,7 @@ const Education: React.FC = () => {
       location: "Cleveland, OH",
       duration: "2023 - 2025",
       gpa: "3.8/4.0",
+      logo: "/images/csu-logo.svg",
       description: "Specialized in advanced analytics, cloud architectures, and data engineering. Completed coursework in database management, machine learning, and enterprise systems.",
       highlights: [
         "Graduate Research Assistant - Developed Python dashboards and Flask microservices",
@@ -39,6 +40,7 @@ const Education: React.FC = () => {
       location: "Hyderabad, India", 
       duration: "2016 - 2020",
       gpa: "3.7/4.0",
+      logo: "/images/jntu-logo.svg",
       description: "Comprehensive foundation in computer science fundamentals, software development, and system design. Active participation in technical clubs and hackathons.",
       highlights: [
         "Technical Lead - Led development team for college project management system",
@@ -75,6 +77,12 @@ const Education: React.FC = () => {
       issuer: "Microsoft",
       year: "2023",
       icon: Award
+    },
+    {
+      name: "Python Full Stack Developer",
+      issuer: "Professional Certification",
+      year: "2023",
+      icon: Code
     },
     {
       name: "Certified Scrum Master (CSM)",
@@ -126,7 +134,24 @@ const Education: React.FC = () => {
               <div className="education-card glass">
                 <div className="education-header">
                   <div className="education-icon">
-                    <GraduationCap size={32} />
+                    {education.logo ? (
+                      <img 
+                        src={process.env.PUBLIC_URL + education.logo} 
+                        alt={`${education.institution} logo`}
+                        className="institution-logo"
+                        onError={(e) => {
+                          // Fallback to icon if logo fails to load
+                          e.currentTarget.style.display = 'none';
+                          const fallback = e.currentTarget.nextElementSibling as HTMLElement;
+                          if (fallback) {
+                            fallback.style.display = 'flex';
+                          }
+                        }}
+                      />
+                    ) : null}
+                    <div className="education-icon-fallback" style={{ display: education.logo ? 'none' : 'flex' }}>
+                      <GraduationCap size={32} />
+                    </div>
                   </div>
                   <div className="education-info">
                     <h3 className="education-degree">{education.degree}</h3>
