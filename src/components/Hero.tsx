@@ -152,7 +152,7 @@ const Hero: React.FC<HeroProps> = ({ onHireMeClick }) => {
           >
             <div className="profile-image-container">
               <img 
-                src="/saitarun/images/profile.jpg" 
+                src="profile.jpg" 
                 alt="Professional headshot" 
                 className="profile-image"
               />

@@ -1,10 +1,10 @@
 {
   "files": {
     "main.css": "/saitarun/static/css/main.3d460f32.css",
-    "main.js": "/saitarun/static/js/main.fa586a3f.js",
+    "main.js": "/saitarun/static/js/main.1ca4a801.js",
     "static/js/325.d510257d.chunk.js": "/saitarun/static/js/325.d510257d.chunk.js",
-    "static/js/311.db441254.chunk.js": "/saitarun/static/js/311.db441254.chunk.js",
-    "static/js/518.00ae2abd.chunk.js": "/saitarun/static/js/518.00ae2abd.chunk.js",
+    "static/js/311.4d8f4b69.chunk.js": "/saitarun/static/js/311.4d8f4b69.chunk.js",
+    "static/js/518.20c3c9a1.chunk.js": "/saitarun/static/js/518.20c3c9a1.chunk.js",
     "static/js/152.3fb23c87.chunk.js": "/saitarun/static/js/152.3fb23c87.chunk.js",
     "static/js/81.7802b8b7.chunk.js": "/saitarun/static/js/81.7802b8b7.chunk.js",
     "static/js/881.60ce00c7.chunk.js": "/saitarun/static/js/881.60ce00c7.chunk.js",
@@ -16,10 +16,10 @@
     "static/js/779.7543dab9.chunk.js": "/saitarun/static/js/779.7543dab9.chunk.js",
     "index.html": "/saitarun/index.html",
     "main.3d460f32.css.map": "/saitarun/static/css/main.3d460f32.css.map",
-    "main.fa586a3f.js.map": "/saitarun/static/js/main.fa586a3f.js.map",
+    "main.1ca4a801.js.map": "/saitarun/static/js/main.1ca4a801.js.map",
     "325.d510257d.chunk.js.map": "/saitarun/static/js/325.d510257d.chunk.js.map",
-    "311.db441254.chunk.js.map": "/saitarun/static/js/311.db441254.chunk.js.map",
-    "518.00ae2abd.chunk.js.map": "/saitarun/static/js/518.00ae2abd.chunk.js.map",
+    "311.4d8f4b69.chunk.js.map": "/saitarun/static/js/311.4d8f4b69.chunk.js.map",
+    "518.20c3c9a1.chunk.js.map": "/saitarun/static/js/518.20c3c9a1.chunk.js.map",
     "152.3fb23c87.chunk.js.map": "/saitarun/static/js/152.3fb23c87.chunk.js.map",
     "81.7802b8b7.chunk.js.map": "/saitarun/static/js/81.7802b8b7.chunk.js.map",
     "881.60ce00c7.chunk.js.map": "/saitarun/static/js/881.60ce00c7.chunk.js.map",
@@ -32,6 +32,6 @@
   },
   "entrypoints": [
     "static/css/main.3d460f32.css",
-    "static/js/main.fa586a3f.js"
+    "static/js/main.1ca4a801.js"
   ]
 }
