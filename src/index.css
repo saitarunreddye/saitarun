@@ -2597,10 +2597,17 @@ section {
     gap: var(--space-sm);
     display: flex !important;
     flex-wrap: nowrap !important;
-    justify-content: center !important;
+    justify-content: flex-start !important;
     margin-bottom: var(--space-xl) !important;
     overflow-x: auto !important;
     padding: 0 var(--space-sm) !important;
+    -webkit-overflow-scrolling: touch !important;
+    scrollbar-width: none !important;
+    -ms-overflow-style: none !important;
+  }
+  
+  .category-tabs::-webkit-scrollbar {
+    display: none !important;
   }
 
   .category-tab {
@@ -2611,6 +2618,7 @@ section {
     gap: var(--space-xs) !important;
     white-space: nowrap !important;
     flex-shrink: 0 !important;
+    min-width: max-content !important;
   }
 
   .skills-grid {
@@ -3965,7 +3973,6 @@ section {
   
   /* Force all content to be visible */
   .skills-tabs,
-  .category-tabs,
   .skills-grid,
   .tools-section,
   .additional-skills,
@@ -3983,6 +3990,41 @@ section {
     visibility: visible !important;
     transform: none !important;
     display: block !important;
+  }
+  
+  /* Special handling for category tabs to maintain flex layout */
+  .category-tabs {
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: none !important;
+    display: flex !important;
+    flex-wrap: nowrap !important;
+    justify-content: flex-start !important;
+    gap: var(--space-sm) !important;
+    margin-bottom: var(--space-xl) !important;
+    overflow-x: auto !important;
+    padding: 0 var(--space-sm) !important;
+    -webkit-overflow-scrolling: touch !important;
+    scrollbar-width: none !important;
+    -ms-overflow-style: none !important;
+  }
+  
+  .category-tabs::-webkit-scrollbar {
+    display: none !important;
+  }
+  
+  .category-tab {
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: none !important;
+    display: flex !important;
+    align-items: center !important;
+    gap: var(--space-xs) !important;
+    padding: var(--space-sm) var(--space-md) !important;
+    font-size: 0.9rem !important;
+    white-space: nowrap !important;
+    flex-shrink: 0 !important;
+    min-width: max-content !important;
   }
   
   /* Fix motion animations on mobile */
