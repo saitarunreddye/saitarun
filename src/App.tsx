@@ -74,20 +74,20 @@ const App: React.FC<AppProps> = () => {
   return (
     <>
       <Helmet>
-        <title>E. Sai Tarun Reddy | Full Stack Developer · Backend · Cloud</title>
+        <title>Sai Tarun | Full Stack Developer · Backend · Cloud</title>
         <meta name="description" content="Full Stack Developer specializing in secure REST APIs, cloud-native systems, CI/CD automation, and data pipelines. MS in Information Systems (CSU)." />
         <meta name="keywords" content="portfolio, web developer, full-stack, React, TypeScript, UI/UX, frontend, backend, JavaScript, Node.js" />
-        <meta name="author" content="E. Sai Tarun Reddy" />
+        <meta name="author" content="Sai Tarun" />
         
         {/* Open Graph */}
-        <meta property="og:title" content="E. Sai Tarun Reddy | Portfolio" />
+        <meta property="og:title" content="Sai Tarun | Portfolio" />
         <meta property="og:description" content="Full Stack Developer · Backend Engineer · Cloud Engineer" />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://your-website.com" />
         
         {/* Twitter */}
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="E. Sai Tarun Reddy" />
+        <meta name="twitter:title" content="Sai Tarun" />
         <meta name="twitter:description" content="Full Stack Developer · Backend Engineer · Cloud Engineer" />
         
         {/* Additional Meta Tags */}
@@ -100,7 +100,7 @@ const App: React.FC<AppProps> = () => {
           {JSON.stringify({
             "@context": "https://schema.org",
             "@type": "Person",
-            "name": "E. Sai Tarun Reddy",
+            "name": "Sai Tarun",
             "jobTitle": "Full Stack Developer · Backend Engineer · Cloud Engineer",
             "description": "Secure REST APIs, cloud-native architectures, CI/CD, and data pipelines at scale.",
             "url": "https://your-website.com",

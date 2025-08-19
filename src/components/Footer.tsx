@@ -197,7 +197,7 @@ const Footer: React.FC = () => {
         >
           <div className="footer-bottom-content">
             <p className="copyright">
-              © {currentYear} E. Sai Tarun Reddy. Made with{' '}
+              © {currentYear} Sai Tarun. Made with{' '}
               <Heart size={16} className="heart-icon" />{' '}
               and lots of coffee.
             </p>

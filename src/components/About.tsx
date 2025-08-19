@@ -92,7 +92,7 @@ const About: React.FC = () => {
           >
             <div className="about-image-container">
                             <img 
-                src="./images/profile.jpg" 
+                src="images/profile.jpg" 
                 alt="Professional headshot" 
                 className="about-image"
               />
