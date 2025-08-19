@@ -2,7 +2,7 @@
   "name": "innovative-portfolio",
   "version": "1.0.0",
   "description": "Cutting-edge portfolio website with advanced animations and interactive features",
-  "homepage": "https://saitarunreddye.github.io/saitarun",
+  "homepage": "https://saitarunreddye.github.io/saitarun/",
   "private": true,
   "dependencies": {
     "@types/node": "^18.15.0",
@@ -29,7 +29,8 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "deploy": "gh-pages -d build",
+    "deploy-main": "npm run build && git add build && git commit -m \"Deploy to main\" && git push origin main"
   },
   "eslintConfig": {
     "extends": [
