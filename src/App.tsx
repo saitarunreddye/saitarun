@@ -11,6 +11,7 @@ const About = React.lazy(() => import('./components/About'));
 const Skills = React.lazy(() => import('./components/Skills'));
 const Projects = React.lazy(() => import('./components/Projects'));
 const Experience = React.lazy(() => import('./components/Experience'));
+const Education = React.lazy(() => import('./components/Education'));
 const Contact = React.lazy(() => import('./components/Contact'));
 const Footer = React.lazy(() => import('./components/Footer'));
 const LoadingScreen = React.lazy(() => import('./components/LoadingScreen'));
@@ -32,7 +33,7 @@ const App: React.FC<AppProps> = () => {
   // Handle scroll to update current section
   useEffect(() => {
     const handleScroll = () => {
-      const sections = ['home', 'about', 'skills', 'projects', 'experience', 'contact'];
+      const sections = ['home', 'about', 'skills', 'projects', 'experience', 'education', 'contact'];
       const scrollPosition = window.scrollY + 100;
 
       for (const section of sections) {
@@ -243,6 +244,12 @@ const App: React.FC<AppProps> = () => {
           <Suspense fallback={<div>Loading Experience...</div>}>
             <section id="experience">
               <Experience />
+            </section>
+          </Suspense>
+
+          <Suspense fallback={<div>Loading Education...</div>}>
+            <section id="education">
+              <Education />
             </section>
           </Suspense>
 
