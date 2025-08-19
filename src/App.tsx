@@ -1,21 +1,20 @@
-import React, { useEffect, useState, Suspense } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Helmet } from 'react-helmet';
 import Particles from 'react-tsparticles';
 import { loadFull } from 'tsparticles';
 import type { Engine } from 'tsparticles-engine';
 
-// Lazy-loaded components for better performance
-const Navigation = React.lazy(() => import('./components/Navigation'));
-const Hero = React.lazy(() => import('./components/Hero'));
-const About = React.lazy(() => import('./components/About'));
-const Skills = React.lazy(() => import('./components/Skills'));
-const Projects = React.lazy(() => import('./components/Projects'));
-const Experience = React.lazy(() => import('./components/Experience'));
-const Education = React.lazy(() => import('./components/Education'));
-const Contact = React.lazy(() => import('./components/Contact'));
-const Footer = React.lazy(() => import('./components/Footer'));
-
-const CalendlyModal = React.lazy(() => import('./components/CalendlyModal'));
+// Import components directly instead of lazy loading to avoid loading messages
+import Navigation from './components/Navigation';
+import Hero from './components/Hero';
+import About from './components/About';
+import Skills from './components/Skills';
+import Projects from './components/Projects';
+import Experience from './components/Experience';
+import Education from './components/Education';
+import Contact from './components/Contact';
+import Footer from './components/Footer';
+import CalendlyModal from './components/CalendlyModal';
 
 // Types
 interface AppProps {}
@@ -53,8 +52,6 @@ const App: React.FC<AppProps> = () => {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
-
-
 
   return (
     <>
@@ -197,66 +194,46 @@ const App: React.FC<AppProps> = () => {
       </div>
 
       <div className="app">
-        <Suspense fallback={<div>Loading Navigation...</div>}>
-          <Navigation currentSection={currentSection} />
-        </Suspense>
+        <Navigation currentSection={currentSection} />
 
         <main>
-          <Suspense fallback={<div>Loading Hero...</div>}>
-            <section id="home">
-              <Hero onHireMeClick={() => setIsCalendlyOpen(true)} />
-            </section>
-          </Suspense>
+          <section id="home">
+            <Hero onHireMeClick={() => setIsCalendlyOpen(true)} />
+          </section>
 
-          <Suspense fallback={<div>Loading About...</div>}>
-            <section id="about">
-              <About />
-            </section>
-          </Suspense>
+          <section id="about">
+            <About />
+          </section>
 
-          <Suspense fallback={<div>Loading Skills...</div>}>
-            <section id="skills">
-              <Skills />
-            </section>
-          </Suspense>
+          <section id="skills">
+            <Skills />
+          </section>
 
-          <Suspense fallback={<div>Loading Projects...</div>}>
-            <section id="projects">
-              <Projects />
-            </section>
-          </Suspense>
+          <section id="projects">
+            <Projects />
+          </section>
 
-          <Suspense fallback={<div>Loading Experience...</div>}>
-            <section id="experience">
-              <Experience />
-            </section>
-          </Suspense>
+          <section id="experience">
+            <Experience />
+          </section>
 
-          <Suspense fallback={<div>Loading Education...</div>}>
-            <section id="education">
-              <Education />
-            </section>
-          </Suspense>
+          <section id="education">
+            <Education />
+          </section>
 
-          <Suspense fallback={<div>Loading Contact...</div>}>
-            <section id="contact">
-              <Contact />
-            </section>
-          </Suspense>
+          <section id="contact">
+            <Contact />
+          </section>
         </main>
 
-        <Suspense fallback={<div>Loading Footer...</div>}>
-          <Footer />
-        </Suspense>
+        <Footer />
 
         {/* Calendly Modal */}
-        <Suspense fallback={<div>Loading Modal...</div>}>
-          <CalendlyModal
-            isOpen={isCalendlyOpen}
-            onClose={() => setIsCalendlyOpen(false)}
-            calendlyUrl="https://calendly.com/your-calendly-link"
-          />
-        </Suspense>
+        <CalendlyModal
+          isOpen={isCalendlyOpen}
+          onClose={() => setIsCalendlyOpen(false)}
+          calendlyUrl="https://calendly.com/your-calendly-link"
+        />
       </div>
     </>
   );
