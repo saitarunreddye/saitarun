@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/saitarun/static/css/main.25cf3981.css",
+    "main.css": "/saitarun/static/css/main.15361001.css",
     "main.js": "/saitarun/static/js/main.bce38a39.js",
     "index.html": "/saitarun/index.html",
-    "main.25cf3981.css.map": "/saitarun/static/css/main.25cf3981.css.map",
+    "main.15361001.css.map": "/saitarun/static/css/main.15361001.css.map",
     "main.bce38a39.js.map": "/saitarun/static/js/main.bce38a39.js.map"
   },
   "entrypoints": [
-    "static/css/main.25cf3981.css",
+    "static/css/main.15361001.css",
     "static/js/main.bce38a39.js"
   ]
 }
