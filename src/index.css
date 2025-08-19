@@ -2596,9 +2596,11 @@ section {
   .category-tabs {
     gap: var(--space-sm);
     display: flex !important;
-    flex-wrap: wrap !important;
+    flex-wrap: nowrap !important;
     justify-content: center !important;
     margin-bottom: var(--space-xl) !important;
+    overflow-x: auto !important;
+    padding: 0 var(--space-sm) !important;
   }
 
   .category-tab {
@@ -2607,6 +2609,8 @@ section {
     display: flex !important;
     align-items: center !important;
     gap: var(--space-xs) !important;
+    white-space: nowrap !important;
+    flex-shrink: 0 !important;
   }
 
   .skills-grid {
