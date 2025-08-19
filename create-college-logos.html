@@ -3,127 +3,168 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>College Logo Generator</title>
+    <title>Create College Logos</title>
     <style>
         body {
             font-family: Arial, sans-serif;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            margin: 0;
-            background: #f0f0f0;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
         }
         .logo-container {
-            display: flex;
-            gap: 20px;
-            flex-wrap: wrap;
-        }
-        .logo {
-            width: 200px;
-            height: 200px;
-            background: white;
-            border-radius: 15px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            margin: 20px 0;
             text-align: center;
-            padding: 20px;
         }
-        .logo h2 {
-            margin: 0 0 10px 0;
-            font-size: 18px;
-            color: #333;
+        canvas {
+            border: 1px solid #ddd;
+            margin: 10px;
         }
-        .logo p {
-            margin: 0;
-            font-size: 14px;
-            color: #666;
-        }
-        .csu {
-            background: linear-gradient(135deg, #1e3a8a, #3b82f6);
-            color: white;
-        }
-        .jntu {
-            background: linear-gradient(135deg, #dc2626, #ef4444);
-            color: white;
-        }
-        .download-btn {
-            margin-top: 10px;
-            padding: 8px 16px;
-            background: #333;
+        button {
+            background: #007bff;
             color: white;
             border: none;
+            padding: 10px 20px;
             border-radius: 5px;
             cursor: pointer;
+            margin: 5px;
         }
-        .download-btn:hover {
-            background: #555;
+        button:hover {
+            background: #0056b3;
+        }
+        .instructions {
+            background: #e9ecef;
+            padding: 15px;
+            border-radius: 5px;
+            margin-bottom: 20px;
         }
     </style>
 </head>
 <body>
-    <div class="logo-container">
-        <div class="logo csu">
-            <h2>Cleveland State University</h2>
-            <p>MS Information Systems</p>
-            <button class="download-btn" onclick="downloadLogo('csu')">Download CSU Logo</button>
+    <div class="container">
+        <h1>Create College Logo PNGs</h1>
+        
+        <div class="instructions">
+            <h3>Instructions:</h3>
+            <ol>
+                <li>Click the buttons below to generate the college logos</li>
+                <li>Right-click on each canvas and select "Save image as..."</li>
+                <li>Save as "cleveland.png" and "jntuh.png" respectively</li>
+                <li>Place the saved files in the "public/images/" directory of your project</li>
+            </ol>
         </div>
-        <div class="logo jntu">
-            <h2>JNTU Hyderabad</h2>
-            <p>BTech Computer Science</p>
-            <button class="download-btn" onclick="downloadLogo('jntu')">Download JNTU Logo</button>
+
+        <div class="logo-container">
+            <h3>Cleveland State University Logo</h3>
+            <canvas id="clevelandCanvas" width="200" height="200"></canvas>
+            <br>
+            <button onclick="generateClevelandLogo()">Generate Cleveland Logo</button>
+            <button onclick="downloadCanvas('clevelandCanvas', 'cleveland.png')">Download Cleveland Logo</button>
+        </div>
+
+        <div class="logo-container">
+            <h3>JNTU Hyderabad Logo</h3>
+            <canvas id="jntuhCanvas" width="200" height="200"></canvas>
+            <br>
+            <button onclick="generateJNTUHLogo()">Generate JNTUH Logo</button>
+            <button onclick="downloadCanvas('jntuhCanvas', 'jntuh.png')">Download JNTUH Logo</button>
         </div>
     </div>
 
     <script>
-        function downloadLogo(type) {
-            const canvas = document.createElement('canvas');
+        function generateClevelandLogo() {
+            const canvas = document.getElementById('clevelandCanvas');
             const ctx = canvas.getContext('2d');
-            canvas.width = 200;
-            canvas.height = 200;
             
-            if (type === 'csu') {
-                // CSU gradient
-                const gradient = ctx.createLinearGradient(0, 0, 200, 200);
-                gradient.addColorStop(0, '#1e3a8a');
-                gradient.addColorStop(1, '#3b82f6');
-                ctx.fillStyle = gradient;
-                ctx.fillRect(0, 0, 200, 200);
-                
-                // Text
-                ctx.fillStyle = 'white';
-                ctx.font = 'bold 16px Arial';
-                ctx.textAlign = 'center';
-                ctx.fillText('Cleveland State', 100, 80);
-                ctx.fillText('University', 100, 100);
-                ctx.font = '12px Arial';
-                ctx.fillText('MS Information Systems', 100, 130);
-            } else {
-                // JNTU gradient
-                const gradient = ctx.createLinearGradient(0, 0, 200, 200);
-                gradient.addColorStop(0, '#dc2626');
-                gradient.addColorStop(1, '#ef4444');
-                ctx.fillStyle = gradient;
-                ctx.fillRect(0, 0, 200, 200);
-                
-                // Text
-                ctx.fillStyle = 'white';
-                ctx.font = 'bold 16px Arial';
-                ctx.textAlign = 'center';
-                ctx.fillText('JNTU Hyderabad', 100, 80);
-                ctx.font = '12px Arial';
-                ctx.fillText('BTech Computer Science', 100, 130);
-            }
+            // Clear canvas
+            ctx.clearRect(0, 0, 200, 200);
             
-            // Download
+            // Create gradient background
+            const gradient = ctx.createLinearGradient(0, 0, 200, 200);
+            gradient.addColorStop(0, '#1e3a8a');
+            gradient.addColorStop(1, '#3b82f6');
+            
+            // Draw background
+            ctx.fillStyle = gradient;
+            ctx.fillRect(0, 0, 200, 200);
+            
+            // Draw circle
+            ctx.fillStyle = 'white';
+            ctx.beginPath();
+            ctx.arc(100, 100, 80, 0, 2 * Math.PI);
+            ctx.fill();
+            
+            // Draw text
+            ctx.fillStyle = '#1e3a8a';
+            ctx.font = 'bold 16px Arial';
+            ctx.textAlign = 'center';
+            ctx.fillText('CLEVELAND', 100, 85);
+            ctx.fillText('STATE', 100, 105);
+            ctx.fillText('UNIVERSITY', 100, 125);
+            
+            // Draw small text
+            ctx.font = '12px Arial';
+            ctx.fillText('EST. 1964', 100, 145);
+        }
+
+        function generateJNTUHLogo() {
+            const canvas = document.getElementById('jntuhCanvas');
+            const ctx = canvas.getContext('2d');
+            
+            // Clear canvas
+            ctx.clearRect(0, 0, 200, 200);
+            
+            // Create gradient background
+            const gradient = ctx.createLinearGradient(0, 0, 200, 200);
+            gradient.addColorStop(0, '#dc2626');
+            gradient.addColorStop(1, '#ef4444');
+            
+            // Draw background
+            ctx.fillStyle = gradient;
+            ctx.fillRect(0, 0, 200, 200);
+            
+            // Draw circle
+            ctx.fillStyle = 'white';
+            ctx.beginPath();
+            ctx.arc(100, 100, 80, 0, 2 * Math.PI);
+            ctx.fill();
+            
+            // Draw text
+            ctx.fillStyle = '#dc2626';
+            ctx.font = 'bold 14px Arial';
+            ctx.textAlign = 'center';
+            ctx.fillText('JNTU', 100, 85);
+            ctx.fillText('HYDERABAD', 100, 105);
+            
+            // Draw small text
+            ctx.font = '12px Arial';
+            ctx.fillText('EST. 1972', 100, 125);
+            
+            // Draw additional text
+            ctx.font = '10px Arial';
+            ctx.fillText('Jawaharlal Nehru', 100, 140);
+            ctx.fillText('Technological University', 100, 155);
+        }
+
+        function downloadCanvas(canvasId, filename) {
+            const canvas = document.getElementById(canvasId);
             const link = document.createElement('a');
-            link.download = `${type}-logo.png`;
+            link.download = filename;
             link.href = canvas.toDataURL();
             link.click();
         }
+
+        // Generate logos on page load
+        window.onload = function() {
+            generateClevelandLogo();
+            generateJNTUHLogo();
+        };
     </script>
 </body>
 </html>

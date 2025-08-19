@@ -17,7 +17,7 @@ const Education: React.FC = () => {
       location: "Cleveland, OH",
       duration: "2023 - 2025",
       gpa: "3.8/4.0",
-      logo: "/images/csu-logo.svg",
+      logo: "/images/cleveland.png",
       description: "Specialized in advanced analytics, cloud architectures, and data engineering. Completed coursework in database management, machine learning, and enterprise systems.",
       highlights: [
         "Graduate Research Assistant - Developed Python dashboards and Flask microservices",
@@ -40,7 +40,7 @@ const Education: React.FC = () => {
       location: "Hyderabad, India", 
       duration: "2016 - 2020",
       gpa: "3.7/4.0",
-      logo: "/images/jntu-logo.svg",
+      logo: "/images/jntuh.png",
       description: "Comprehensive foundation in computer science fundamentals, software development, and system design. Active participation in technical clubs and hackathons.",
       highlights: [
         "Technical Lead - Led development team for college project management system",
