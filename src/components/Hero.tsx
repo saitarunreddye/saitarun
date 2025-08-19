@@ -175,14 +175,14 @@ const Hero: React.FC<HeroProps> = ({ onHireMeClick }) => {
               👋 Hello, I'm
             </motion.p>
 
-            <motion.h1
-              className="hero-title"
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.6 }}
-            >
-              <span className="gradient-text">E. Sai Tarun Reddy</span>
-            </motion.h1>
+                         <motion.h1
+               className="hero-title"
+               initial={{ opacity: 0, y: 30 }}
+               animate={{ opacity: 1, y: 0 }}
+               transition={{ duration: 0.8, delay: 0.6 }}
+             >
+               <span className="gradient-text">Sai Tarun</span>
+             </motion.h1>
 
             <motion.h2
               className="hero-subtitle"
