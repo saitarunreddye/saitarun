@@ -47,11 +47,7 @@ const Experience: React.FC = () => {
     }
   ];
 
-  const certifications = [
-    { name: "Microsoft Certified: Azure Fundamentals", issuer: "Microsoft", date: "2023", logo: "🔷" },
-    { name: "Python Full Stack Development Certified", issuer: "", date: "2022", logo: "🐍" },
-    { name: "JavaScript Algorithms & Data Structures", issuer: "", date: "2021", logo: "🟨" }
-  ];
+
 
   return (
     <motion.div
@@ -137,36 +133,7 @@ const Experience: React.FC = () => {
           ))}
         </div>
 
-        {/* Certifications Section */}
-        <motion.div
-          className="certifications-section"
-          initial={{ opacity: 0, y: 30 }}
-          animate={inView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.8, delay: 1.2 }}
-        >
-          <h3>Certifications & Awards</h3>
-          <div className="certifications-grid">
-            {certifications.map((cert, index) => (
-              <motion.div
-                key={cert.name}
-                className="certification-card glass"
-                initial={{ opacity: 0, scale: 0.8 }}
-                animate={inView ? { opacity: 1, scale: 1 } : {}}
-                transition={{ duration: 0.5, delay: 1.4 + index * 0.1 }}
-                whileHover={{ scale: 1.05, y: -5 }}
-              >
-                <div className="cert-logo">
-                  <span className="cert-emoji">{cert.logo}</span>
-                </div>
-                <div className="cert-content">
-                  <h4 className="cert-name">{cert.name}</h4>
-                  <p className="cert-issuer">{cert.issuer}</p>
-                  <span className="cert-date">{cert.date}</span>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </motion.div>
+
 
         {/* Skills Summary */}
         <motion.div
