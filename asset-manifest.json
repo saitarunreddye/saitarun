@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/saitarun/static/css/main.c0b441cc.css",
+    "main.css": "/saitarun/static/css/main.27cc1c05.css",
     "main.js": "/saitarun/static/js/main.60719b7e.js",
     "static/js/325.e832b15b.chunk.js": "/saitarun/static/js/325.e832b15b.chunk.js",
     "static/js/311.83bdd95f.chunk.js": "/saitarun/static/js/311.83bdd95f.chunk.js",
@@ -16,7 +16,7 @@
     "static/js/924.82c51b60.chunk.js": "/saitarun/static/js/924.82c51b60.chunk.js",
     "static/js/779.7543dab9.chunk.js": "/saitarun/static/js/779.7543dab9.chunk.js",
     "index.html": "/saitarun/index.html",
-    "main.c0b441cc.css.map": "/saitarun/static/css/main.c0b441cc.css.map",
+    "main.27cc1c05.css.map": "/saitarun/static/css/main.27cc1c05.css.map",
     "main.60719b7e.js.map": "/saitarun/static/js/main.60719b7e.js.map",
     "325.e832b15b.chunk.js.map": "/saitarun/static/js/325.e832b15b.chunk.js.map",
     "311.83bdd95f.chunk.js.map": "/saitarun/static/js/311.83bdd95f.chunk.js.map",
@@ -33,7 +33,7 @@
     "779.7543dab9.chunk.js.map": "/saitarun/static/js/779.7543dab9.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.c0b441cc.css",
+    "static/css/main.27cc1c05.css",
     "static/js/main.60719b7e.js"
   ]
 }
