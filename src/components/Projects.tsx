@@ -5,8 +5,9 @@ import { ExternalLink, Github, Code, Palette, Smartphone } from 'lucide-react';
 
 const Projects: React.FC = () => {
   const [ref, inView] = useInView({
-    threshold: 0.3,
+    threshold: 0.1,
     triggerOnce: true,
+    rootMargin: '-50px 0px',
   });
 
   const [activeFilter, setActiveFilter] = useState('all');
