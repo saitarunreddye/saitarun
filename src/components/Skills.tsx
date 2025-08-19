@@ -8,8 +8,9 @@ import {
 
 const Skills: React.FC = () => {
   const [ref, inView] = useInView({
-    threshold: 0.3,
+    threshold: 0.1,
     triggerOnce: true,
+    rootMargin: '-50px 0px',
   });
 
   const [activeCategory, setActiveCategory] = useState('backend');
