@@ -62,7 +62,7 @@ const Navigation: React.FC<NavigationProps> = ({ currentSection }) => {
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
         >
-          <span className="gradient-text">E. Sai Tarun Reddy</span>
+          <span className="gradient-text">Sai Tarun</span>
         </motion.div>
 
         {/* Desktop Navigation */}
