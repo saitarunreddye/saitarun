@@ -91,9 +91,9 @@ const About: React.FC = () => {
             transition={{ duration: 0.8, delay: 0.3 }}
           >
             <div className="about-image-container">
-              <img
-                src="/images/profile.jpg"
-                alt="Professional headshot"
+                            <img 
+                src="./images/profile.jpg" 
+                alt="Professional headshot" 
                 className="about-image"
               />
               <div className="about-image-glow"></div>

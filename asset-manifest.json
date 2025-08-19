@@ -1,10 +1,10 @@
 {
   "files": {
     "main.css": "/saitarun/static/css/main.3d460f32.css",
-    "main.js": "/saitarun/static/js/main.3e918f05.js",
+    "main.js": "/saitarun/static/js/main.e52c92fe.js",
     "static/js/325.a01521a2.chunk.js": "/saitarun/static/js/325.a01521a2.chunk.js",
-    "static/js/311.da63a777.chunk.js": "/saitarun/static/js/311.da63a777.chunk.js",
-    "static/js/518.1efc7bfd.chunk.js": "/saitarun/static/js/518.1efc7bfd.chunk.js",
+    "static/js/311.c5d0c0f4.chunk.js": "/saitarun/static/js/311.c5d0c0f4.chunk.js",
+    "static/js/518.b98a1c7c.chunk.js": "/saitarun/static/js/518.b98a1c7c.chunk.js",
     "static/js/152.3fb23c87.chunk.js": "/saitarun/static/js/152.3fb23c87.chunk.js",
     "static/js/81.7802b8b7.chunk.js": "/saitarun/static/js/81.7802b8b7.chunk.js",
     "static/js/881.60ce00c7.chunk.js": "/saitarun/static/js/881.60ce00c7.chunk.js",
@@ -16,10 +16,10 @@
     "static/js/779.7543dab9.chunk.js": "/saitarun/static/js/779.7543dab9.chunk.js",
     "index.html": "/saitarun/index.html",
     "main.3d460f32.css.map": "/saitarun/static/css/main.3d460f32.css.map",
-    "main.3e918f05.js.map": "/saitarun/static/js/main.3e918f05.js.map",
+    "main.e52c92fe.js.map": "/saitarun/static/js/main.e52c92fe.js.map",
     "325.a01521a2.chunk.js.map": "/saitarun/static/js/325.a01521a2.chunk.js.map",
-    "311.da63a777.chunk.js.map": "/saitarun/static/js/311.da63a777.chunk.js.map",
-    "518.1efc7bfd.chunk.js.map": "/saitarun/static/js/518.1efc7bfd.chunk.js.map",
+    "311.c5d0c0f4.chunk.js.map": "/saitarun/static/js/311.c5d0c0f4.chunk.js.map",
+    "518.b98a1c7c.chunk.js.map": "/saitarun/static/js/518.b98a1c7c.chunk.js.map",
     "152.3fb23c87.chunk.js.map": "/saitarun/static/js/152.3fb23c87.chunk.js.map",
     "81.7802b8b7.chunk.js.map": "/saitarun/static/js/81.7802b8b7.chunk.js.map",
     "881.60ce00c7.chunk.js.map": "/saitarun/static/js/881.60ce00c7.chunk.js.map",
@@ -32,6 +32,6 @@
   },
   "entrypoints": [
     "static/css/main.3d460f32.css",
-    "static/js/main.3e918f05.js"
+    "static/js/main.e52c92fe.js"
   ]
 }
