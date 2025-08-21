@@ -31,7 +31,7 @@ const About: React.FC = () => {
     {
       name: "Cloud & DevOps",
       subtitle: "AWS, CI/CD",
-      percentage: 85
+      percentage: 60
     },
     {
       name: "Data Engineering",
@@ -53,7 +53,7 @@ const About: React.FC = () => {
       description: "Designed and shipped Flask + Angular microservices for an incentive platform serving 20,000+ users. Built secure JWT REST APIs, real-time dashboards, and automated CI/CD with Docker + GitHub Actions."
     },
     {
-      year: "Jan – May 2025",
+      year: "Jan 2025 - May 2025",
       title: "Graduate Research Assistant",
       company: "Cleveland State University",
       description: "Developed Python dashboards and Flask microservices for student data visualization; optimized DB queries + caching to reduce downtime by 15%."
